@@ -1,4 +1,4 @@
-//Program to sort the array elements using selection sorting algorithm
+//Program to sort the array elements using selection sorting algorithm.
 
 #include <stdio.h>
 
