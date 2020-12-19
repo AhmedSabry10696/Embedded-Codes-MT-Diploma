@@ -1,9 +1,6 @@
-#include <stdio.h>
+//Program to display number of * according to the value in each array element
 
-/*
- * Description:
- * Program to display number of * according to the value in each array element
- */
+#include <stdio.h>
 
 int main( void )
 {
@@ -11,7 +8,7 @@ int main( void )
     int i;
     int j;
 
-    for ( i = 0; i < 5; i++ )
+    for ( i = 0; i < 5; i++ ) //loop on array elements
     {
         printf("%d\t",n[i]);
         for ( j = 0; j < n[ i ]; j++ ) 

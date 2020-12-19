@@ -1,18 +1,21 @@
-#include <stdio.h>
+// sum and average of array elements
 
-#define arr_size 5
+#include <stdio.h>
+#define arr_size 5 
 
 int main()
 {
     int arr[arr_size];
     int i,sum=0;
     float average;
+    //take array elements form user
     printf("Please Enter Five Numbers : \n");
     for(i=0;i<arr_size;i++)
     {
         fflush(stdout);
         scanf("%d",&arr[i]);
     }
+    //print array elements and calculate sum
     printf("The array elements are:\n");
     for(i=0;i<arr_size;i++)
     {

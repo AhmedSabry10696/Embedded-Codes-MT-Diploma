@@ -1,3 +1,5 @@
+// functions declaration
+
 float add(float,float);
 float sub(float x,float y);
 float mul(float x,float y);

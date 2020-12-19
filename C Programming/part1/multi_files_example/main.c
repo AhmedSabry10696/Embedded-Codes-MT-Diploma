@@ -1,5 +1,8 @@
+//program to explain multiple files project
+
 #include <stdio.h>
-#include "File1.h"
+#include "File1.h"  // file that has all functions declaration
+
 int main()
 {
     float a=5,b=3,c;

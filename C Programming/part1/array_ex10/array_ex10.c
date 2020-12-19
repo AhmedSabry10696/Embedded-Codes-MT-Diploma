@@ -1,3 +1,5 @@
+//program of 2D arrays
+
 #include <stdio.h>
 
 int main()
@@ -5,9 +7,10 @@ int main()
    int a[2][2], b[2][2], c[2][2];
    int i,j;
    printf("Enter the elements of 1st matrix\n");
-   for(i=0;i<2;++i)
+   // take elements of the first 2D array from user
+   for(i=0;i<2;++i)        // loop till rows nun
    {
-       for(j=0;j<2;++j)
+       for(j=0;j<2;++j)    // loop till cols num
        {
             printf("Enter a[%d][%d]: ",i,j);
             fflush(stdout);
@@ -15,6 +18,7 @@ int main()
        }
    }
    printf("Enter the elements of 2nd matrix\n");
+   // take elements of the second 2D array
    for(i=0;i<2;++i)
    {
        for(j=0;j<2;++j)
@@ -25,6 +29,7 @@ int main()
        }
    }
 
+    // calculate the sum of the two 2D arrays and store sum in the third one
    for(i=0;i<2;++i)
    {
        for(j=0;j<2;++j)
@@ -34,6 +39,7 @@ int main()
    }
 
    printf("\nSum Of Matrix:\n");
+   // print the sum of the two 2D arrays
    for(i=0;i<2;++i)
    {
        for(j=0;j<2;++j)
