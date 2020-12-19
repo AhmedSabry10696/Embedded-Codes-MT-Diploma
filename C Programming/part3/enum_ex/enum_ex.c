@@ -1,7 +1,9 @@
+// program print the months orders and names
+
 #include <stdio.h>
 
 enum months{
-JAN=1,FEB,MAR,APR,MAY,JUNE,JULY,AUG,SEP,OCT,NOV,DEC
+JAN=1,FEB,MAR,APR,MAY,JUNE,JULY,AUG,SEP,OCT,NOV,DEC  // begin values from 1 (default begin with 0)
 };
 
 int main()

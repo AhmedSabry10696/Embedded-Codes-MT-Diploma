@@ -1,5 +1,8 @@
+// program explain structures
+
 #include <stdio.h>
 
+// srucut declaration as a new datatype declaration
 struct student
 {
     char *first_name;
