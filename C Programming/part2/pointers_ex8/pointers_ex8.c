@@ -1,3 +1,5 @@
+// array of strings and pointer to strings
+
 #include <stdio.h>
 
 int main()
@@ -11,21 +13,21 @@ int main()
 	short sArr2D[][5] = { {1, 2, 3, 4, 5} , {6, 7, 8, 9, 10} };
 	short *sPtr1 = sArr;
 
-	short (*sPtr2)[5] = sArr2D;          // pointer to array of 5 elements
-	short *sPtr3[5];                     //array of pointer
+	short (*sPtr2)[5] = sArr2D;          // pointer to array of 5 elements (pointer to pointer)
+	short *sPtr3[5];                     // array of 5 pointer to short data
 
-	printf("sizeof(str1) = %u\n", sizeof(str1));
-	printf("sizeof(str2) = %u\n", sizeof(str2));
-	printf("sizeof(str3) = %u\n", sizeof(str3));
-	printf("sizeof(cPtr) = %u\n", sizeof(cPtr));
+	printf("sizeof(str1) = %u\n", sizeof(str1)); // 5 bytes 
+	printf("sizeof(str2) = %u\n", sizeof(str2)); // 5 bytes + 1 for null '\0'
+	printf("sizeof(str3) = %u\n", sizeof(str3)); // pointer size depond on address bus 8 bytes means 64 bit address bus
+	printf("sizeof(cPtr) = %u\n", sizeof(cPtr)); // 8 bytes
 	printf("\n");
 
-	printf("sizeof(sArr) = %u\n", sizeof(sArr));
-	printf("sizeof(sPtr1) = %u\n", sizeof(sPtr1));
-	printf("sizeof(sArr2D) = %u\n", sizeof(sArr2D));
-	printf("sizeof(sPtr2) = %u\n", sizeof(sPtr2));
-	printf("sizeof(*sPtr2) = %u\n", sizeof(*sPtr2));
-	printf("sizeof(sPtr3) = %u\n", sizeof(sPtr3));
+	printf("sizeof(sArr) = %u\n", sizeof(sArr));     // 5 * 2 bytes
+	printf("sizeof(sPtr1) = %u\n", sizeof(sPtr1));   // 8 byte
+	printf("sizeof(sArr2D) = %u\n", sizeof(sArr2D)); // 10 * 2 bytes	
+	printf("sizeof(sPtr2) = %u\n", sizeof(sPtr2));   // 8 bytes 
+	printf("sizeof(*sPtr2) = %u\n", sizeof(*sPtr2)); // 10 bytes --> pointer to the 1st array in 2D array
+	printf("sizeof(sPtr3) = %u\n", sizeof(sPtr3));   // 5 * 8 bytes --> array of five pointers
 	printf("\n");
 
 	printf("sArr2D[1][2] = %d\n", sArr2D[1][2]);

@@ -1,11 +1,12 @@
+// Application demonstrate the idea of useage pointer to character as a string
+
 #include <stdio.h>
-/* Description:
- * Application demonstrate the idea of useage pointer to character as a string
- */
+
+// function to display string
 void display_string(char *s)
 {
 	printf("str = ");
-	while(*s != '\0')
+	while(*s != '\0')  // loop until the null (end of string)
 	{
 		printf("%c",*s);
 		s++;
