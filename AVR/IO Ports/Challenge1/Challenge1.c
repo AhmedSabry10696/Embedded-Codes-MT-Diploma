@@ -26,11 +26,11 @@ int main(void)
 
 			if(PINA & (1<<PA0))
 			{
-					if((PORTD & 0x0F) != 9)
-					{
-						num++;
-						PORTD = (PORTD & 0xF0) | (num & 0x0F);
-					}
+				if((PORTD & 0x0F) != 9)
+				{
+					num++;
+					PORTD = (PORTD & 0xF0) | (num & 0x0F);
+				}
 			}
 			while(PINA & (1<<PA0)){}  // wait until the switch is released
 		}
@@ -41,11 +41,11 @@ int main(void)
 
 			if(PINA & (1<<PA1))
 			{
-					if((PORTD & 0x0F) != 0)
-					{
-						num--;
-						PORTD = (PORTD & 0xF0) | (num & 0x0F);
-					}
+				if((PORTD & 0x0F) != 0)
+				{
+					num--;
+					PORTD = (PORTD & 0xF0) | (num & 0x0F);
+				}
 			}
 			while(PINA & (1<<PA1)){}  // wait until switch released
 		}				       
