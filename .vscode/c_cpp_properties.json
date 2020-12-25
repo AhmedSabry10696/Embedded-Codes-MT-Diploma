@@ -3,11 +3,12 @@
         {
             "name": "Win32",
             "includePath": [
-                "${workspaceFolder}/**",
-                "C:\\WinAVR-20100110\\avr\\include"
+                "${workspaceFolder}/**"
             ],
             "defines": [
-                "__AVR_ATmega16__"
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
             ],
             "compilerPath": "C:\\MinGW\\bin\\gcc.exe",
             "cStandard": "gnu11",
