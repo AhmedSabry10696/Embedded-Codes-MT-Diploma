@@ -1,10 +1,10 @@
 /*
-three switches control DC Motor that connected to L293D chip
-1st switch clock wise rotote
-2nd switch anti clock wise rotate
-3rd switch stop motor
-switches is pull down
-fcpu  --> 1 MHZ
+* three switches control DC Motor that connected to L293D chip
+* 1st switch clock wise rotote
+* 2nd switch anti clock wise rotate
+* 3rd switch stop motor
+* switches is pull down
+* fcpu  --> 1 MHZ
 */
 
 #include <avr/io.h>
