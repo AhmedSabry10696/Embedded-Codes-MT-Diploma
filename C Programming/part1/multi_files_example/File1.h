@@ -1,4 +1,4 @@
-// functions declaration
+/* functions declaration */
 
 float add(float,float);
 float sub(float x,float y);

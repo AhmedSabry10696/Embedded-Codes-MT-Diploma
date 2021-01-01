@@ -1,8 +1,8 @@
-// program explain structures
+/* program explain structures */
 
 #include <stdio.h>
 
-// srucut declaration as a new datatype declaration
+/* srucut declaration as a new datatype declaration */
 struct student
 {
     char *first_name;
@@ -13,7 +13,7 @@ struct student
 
 int main()
 {
-    struct student s1={ "Mohamed", "Tarek" , 1 , 95.75 }; //initialization like array must be in th
+    struct student s1={ "Mohamed", "Tarek" , 1 , 95.75 }; /* init like array must be in th */
     struct student s2,s3;
 
     s2.first_name = "Ahmed";
