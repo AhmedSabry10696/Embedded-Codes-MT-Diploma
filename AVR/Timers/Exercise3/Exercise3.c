@@ -1,6 +1,6 @@
 /*
 * timer 0 compare mode to generate 2 KHZ clock
-* Duty cycle 50%
+* Duty cycle 50%  |--|__|--|__|
 * FCPU --> 1 MHZ
 * no prescaler
 */
@@ -15,9 +15,10 @@
 
 void Timer0_CTC_Square_Wave_Init(void)
 {
-	TCNT0 = 0; // initial value 0 
-	OCR0 = 250; // compare value
-	DDRB = DDRB | (1<<PB3); // OC0 Pin as output pin
+	TCNT0 = 0; /* initial value 0 */
+	OCR0 = 250; /* compare value */
+	DDRB = DDRB | (1<<PB3); /* OC0 Pin as output pin */
+
 	/* Configure timer control register 
 	 * 1. Non PWM mode FOC0=1
 	 * 2. CTC Mode WGM01=1 & WGM00=0
@@ -30,8 +31,9 @@ void Timer0_CTC_Square_Wave_Init(void)
 int main(void)
 {
 	Timer0_CTC_Square_Wave_Init();
+
     while(1)
     {
-		// do no thing
+		/* do no thing */
     }
 }
