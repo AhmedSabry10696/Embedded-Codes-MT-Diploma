@@ -53,7 +53,8 @@ int main()
 
 	/* save the sum of all data in the last 2 bytes of the buffer */
 	data[MAX_SIZE-2]=(unsigned char)check_sum; //save the least 8-bits in data[MAX_SIZE-2]
-	data[MAX_SIZE-1]=(unsigned char)(check_sum>>(sizeof(data[MAX_SIZE-1])*8)); //save the most 8-bits in data[MAX_SIZE-1]
+	/* save the most 8-bits in data[MAX_SIZE-1] */
+	data[MAX_SIZE-1]=(unsigned char)(check_sum>>(sizeof(data[MAX_SIZE-1])*8)); 
 	printf("check_sum = %x \t data[MAX_SIZE-2] = %x \t data[MAX_SIZE-1] = %x\n",check_sum,data[MAX_SIZE-2],data[MAX_SIZE-1]);
 
 	/* data will be transmitted and we will check sum at the receiver */

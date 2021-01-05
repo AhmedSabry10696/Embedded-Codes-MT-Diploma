@@ -6,9 +6,10 @@
  */
 void print_binary(int num)
 {
-    int i,mask=0x80000000;  // mask = 0b1000.....
+    int i,mask=0x80000000;  /* mask = 0b1000..... */
     printf("The Binary Representation of number %d is : ",num);
-    for(i=0;i<32;i++)
+    
+    for(i=0;i<32;i++)  /* size of int is 32 bit */
     {
         ((num<<i) & mask) ? printf("1"):printf("0");
     }
@@ -20,8 +21,9 @@ void print_binary(int num)
  */
 void print_number_of_ones_zeros(int num)
 {
-    int i,mask=0x80000000;   //mask = 0b10000...
+    int i,mask=0x80000000;   /* mask = 0b10000... */
     int ones_count=0,zeros_count=0;
+    
     for(i=0;i<32;i++)
     {
         ((num<<i) & mask) ? ++ones_count:++zeros_count;

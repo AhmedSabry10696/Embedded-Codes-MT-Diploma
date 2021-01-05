@@ -1,4 +1,5 @@
-#ifndef COMMON_MACROS  // to ensure that .h file inlcude once, we can use #pragma once at beginning of .h file
+/* to ensure that .h file inlcude once, we can use #pragma once at beginning of .h file */
+#ifndef COMMON_MACROS 
 #define COMMON_MACROS
 
 /* Set a certain bit in any register */

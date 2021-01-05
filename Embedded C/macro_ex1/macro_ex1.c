@@ -19,7 +19,7 @@ int main()
     printf("c=%d\n",c);
 
     c = MUL(a+1,b+2); /* a+1*b+2 */
-    /* error in macro because there is no ( ) around each argument */
+    /* error in macro because there is no ( ) around each argument ( a+1 * b+2 )*/
     printf("c=%d\n",c);
 
     c = MUL_MODIFIED(a+1,b+2);

@@ -24,9 +24,9 @@ typedef struct
 
 int main()
 {
-   printf("size of int : %d\n",sizeof(int));
-	 printf( "Memory size occupied by status1 : %d\n", sizeof(status1));
-	 printf( "Memory size occupied by status2 : %d\n", sizeof(status2));
-	 printf( "Memory size occupied by status2 : %d\n", sizeof(status3));
+   printf("size of int : %d\n",sizeof(int));  /* 4 */
+	 printf( "Memory size occupied by status1 : %d\n", sizeof(status1)); /* 8 */
+	 printf( "Memory size occupied by status2 : %d\n", sizeof(status2)); /* 4 */
+	 printf( "Memory size occupied by status2 : %d\n", sizeof(status3)); /* 8 */
     return 0;
 }
