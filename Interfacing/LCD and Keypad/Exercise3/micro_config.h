@@ -11,7 +11,7 @@
 
 
 #ifndef F_CPU
-#define F_CPU 1000000UL //1MHz Clock frequency
+#define F_CPU 1000000UL /* 1MHz Clock frequency */
 #endif  
 
 #include <avr/io.h>

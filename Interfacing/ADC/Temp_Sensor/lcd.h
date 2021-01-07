@@ -2,7 +2,7 @@
  * LCD.h
  *
  * Created: 4/2/2014 7:46:00 PM
- * Author: Mohamed Tarek
+ * Author: Ahmed Sabry
  */ 
 
 #ifndef LCD_H_

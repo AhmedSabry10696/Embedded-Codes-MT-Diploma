@@ -1,5 +1,5 @@
 /*
- * LCD_Modes_Amit.c
+ * LCD_Modes.c
  *
  * Created: 4/14/2015 3:17:07 PM
  *  Author: Ahmed Sabry

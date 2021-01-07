@@ -21,8 +21,8 @@ void LCD_init(void)
 
 void LCD_sendCommand(uint8 command)
 {
-	CLEAR_BIT(LCD_CTRL_PORT,RS); /* Instruction Mode RS=0 */
-	CLEAR_BIT(LCD_CTRL_PORT,RW); /* write data to LCD so RW=0 */
+	CLEAR_BIT(LCD_CTRL_PORT,RS); /* Instruction Mode RS = 0 */
+	CLEAR_BIT(LCD_CTRL_PORT,RW); /* write data to LCD so RW = 0 */
 	_delay_ms(1); /* delay for processing Tas = 50ns */
 	SET_BIT(LCD_CTRL_PORT,E); /* Enable LCD E=1 */
 	_delay_ms(1); /* delay for processing Tpw - Tdws = 190ns */
@@ -34,10 +34,10 @@ void LCD_sendCommand(uint8 command)
 
 void LCD_displayCharacter(uint8 data)
 {
-	SET_BIT(LCD_CTRL_PORT,RS); /* Data Mode RS=1 */
-	CLEAR_BIT(LCD_CTRL_PORT,RW); /* write data to LCD so RW=0 */
+	SET_BIT(LCD_CTRL_PORT,RS); /* Data Mode RS = 1 */
+	CLEAR_BIT(LCD_CTRL_PORT,RW); /* write data to LCD so RW = 0 */
 	_delay_ms(1); /* delay for processing Tas = 50ns */
-	SET_BIT(LCD_CTRL_PORT,E); /* Enable LCD E=1 */
+	SET_BIT(LCD_CTRL_PORT,E); /* Enable LCD E = 1 */
 	_delay_ms(1); /* delay for processing Tpw - Tdws = 190ns */
 	LCD_DATA_PORT = data; /* out the required data char to the data bus D0 --> D7 */
 	_delay_ms(1); /* delay for processing Tdsw = 100ns */
@@ -102,5 +102,5 @@ void LCD_intgerToString(int data)
 
 void LCD_clearScreen(void)
 {
-	LCD_sendCommand(CLEAR_COMMAND); //clear display 
+	LCD_sendCommand(CLEAR_COMMAND); /* clear display */ 
 }

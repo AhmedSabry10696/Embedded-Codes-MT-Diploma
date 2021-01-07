@@ -2,12 +2,13 @@
  * Keypad.c
  *
  * Created: 4/3/2014 3:02:35 PM
- *  Author: Ahmed Sabry
+ * Author: Ahmed Sabry
  */
 
 #include "keypad.h"
 
-uint8 KeyPad_getPressedKey(void){
+uint8 KeyPad_getPressedKey(void)
+{
 	uint8 col,row;
 	while(1)
 	{
@@ -45,11 +46,11 @@ uint8 KeyPad_4x3_adjustKeyNumber(uint8 button_number)
 {
 	switch(button_number)
 	{
-		case 10: return '*'; // ASCII Code of =
+		case 10: return '*'; /* ASCII Code of '*' */
 				 break;
 		case 11: return 0;
 				 break;		
-		case 12: return '#'; // ASCII Code of #
+		case 12: return '#'; /* ASCII Code of '#' */
 				 break;
 		default: return button_number;								 						
 	}
@@ -68,7 +69,7 @@ uint8 KeyPad_4x4_adjustKeyNumber(uint8 button_number)
 				break;
 		case 3: return 9; 
 				break;
-		case 4: return '%'; // ASCII Code of %
+		case 4: return '%'; /* ASCII Code of '%' */
 				break;
 		case 5: return 4; 
 				break;

@@ -4,7 +4,8 @@
  * Author: Ahmed Sabry
  */ 
 
-#ifndef COMMON_MACROS // to ensure to be included once
+/* to ensure to be included once or may use #pragma once */
+#ifndef COMMON_MACROS 
 #define COMMON_MACROS
 
 /* Set a certain bit in any register */

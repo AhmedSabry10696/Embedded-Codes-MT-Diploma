@@ -2,7 +2,7 @@
  * Challenge.c
  *
  * Created: 4/2/2014 7:42:04 PM
- *  Author: Ahmed Sabry
+ * Author: Ahmed Sabry
  */ 
 
 #include "lcd.h"
@@ -16,6 +16,7 @@ int main(void)
 	LCD_displayStringRowColumn(1,0,"Keypad 4x4");
 	LCD_displayStringRowColumn(2,0,"LCD");
 	LCD_goToRowColumn(3,0);
+	
     while(1)
     {
 		/* if any switch pressed for more than 500 ms it counts more than one press */  

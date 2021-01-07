@@ -14,10 +14,12 @@ int main(void)
 	LCD_init(); /* initialize LCD driver */
 	ADC_init(); /* initialize ADC driver */
 	LCD_clearScreen(); /* clear LCD at the beginning */
+
 	/* display this string "Temp =    " only once at LCD */
 	LCD_displayString("Temp = ");
 	LCD_goToRowColumn(0,10);
 	LCD_displayCharacter('C');
+	
     while(1)
     {
 		LCD_goToRowColumn(0,7); /* display the number every time at this position */

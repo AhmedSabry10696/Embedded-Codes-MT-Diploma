@@ -25,6 +25,7 @@ uint8 KeyPad_getPressedKey(void)
 			 * pull up resistors for the rows pins
 			 */ 
 			KEYPAD_PORT_OUT = (~(0b00010000<<col)); 
+			
 			for(row=0;row<N_row;row++) /* loop for rows */
 			{
 				if(BIT_IS_CLEAR(KEYPAD_PORT_IN,row)) /* if the switch is press in this row */ 
@@ -46,11 +47,11 @@ uint8 KeyPad_4x3_adjustKeyNumber(uint8 button_number)
 {
 	switch(button_number)
 	{
-		case 10: return '*'; // ASCII Code of =
+		case 10: return '*'; /* ASCII Code of '=' */
 				 break;
 		case 11: return 0;
 				 break;		
-		case 12: return '#'; // ASCII Code of +
+		case 12: return '#'; /* ASCII Code of '#' */
 				 break;
 		default: return button_number;								 						
 	}
@@ -69,7 +70,7 @@ uint8 KeyPad_4x4_adjustKeyNumber(uint8 button_number)
 				break;
 		case 3: return 9; 
 				break;
-		case 4: return '%'; // ASCII Code of %
+		case 4: return '%'; /* ASCII Code of '%' */
 				break;
 		case 5: return 4; 
 				break;
