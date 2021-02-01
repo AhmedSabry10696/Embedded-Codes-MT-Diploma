@@ -1,5 +1,4 @@
-/* program explain the pointer to structure concept */
-
+/* program explains the pointer to structure concept */
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -21,7 +20,7 @@ int main()
     s_ptr->first_name = "Ahemd";
     s_ptr->second_name = "Sabry";
     s_ptr->id = 1;
-    s_ptr->grade = 95.75;
+    s_ptr->grade = 93;
 
     printf("Student 1 Information :\n");
     /* print data of the first student using array name */

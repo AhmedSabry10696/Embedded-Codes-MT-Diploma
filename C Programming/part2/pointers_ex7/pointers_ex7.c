@@ -1,7 +1,6 @@
 /* pointer with 2D arrays
  * pointer to array
 */
-
 #include <stdio.h>
 
 int main()
@@ -27,7 +26,8 @@ int main()
 	printf("Start Address of the second Array : %p\n", *(Arr2D+1));
 	printf("Start Address of the second Array : %p\n", Arr2D[1]);
 	printf("Start Address of the second Array : %p\n", Arr2D_ptr);
-    return 0 ;
+    
+	return 0 ;
 }
 
 

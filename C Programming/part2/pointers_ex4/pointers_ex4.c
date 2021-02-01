@@ -1,5 +1,4 @@
-/* Program demonstrate the relation between pointers and arrays */
-
+/* Program demonstrates the relation between pointers and arrays */
 #include <stdio.h>
 
 int main()

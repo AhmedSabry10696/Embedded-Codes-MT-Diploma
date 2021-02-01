@@ -1,5 +1,4 @@
-/* App find and display a certain number in array */
-
+/* App finds and display a certain number in array */
 #include <stdio.h>
 
 #define size 10   /* preprocessor operation just text replacement */

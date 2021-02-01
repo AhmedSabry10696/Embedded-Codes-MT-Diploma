@@ -1,10 +1,10 @@
-/* Program to sort the array elements using selection sorting algorithm */
-
+/* Program sorts the array elements using selection sorting algorithm */
 #include <stdio.h>
 
 void selection_sorting(int array[],const int size)
 {
     int i,j,min,temp;
+    
     for(i=0 ; i<size-1 ; i++) /* loop till the element before the last element */
     {
         min=i;

@@ -1,9 +1,9 @@
 /* pointer to structures */
-
 #include <stdio.h>
 
 /* struct declaration */
-struct student{
+struct student
+{
     char *first_name;
     char *second_name;
     int id;
@@ -12,7 +12,7 @@ struct student{
     /* struct student s1;
      * not allowed to define struct inside itself
     */
-}s1,s2; /* define to stuctures */
+}s1,s2; /* define two stuctures */
 
 int main()
 {

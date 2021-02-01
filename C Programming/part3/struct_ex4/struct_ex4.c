@@ -1,5 +1,4 @@
 /* pass structure by value and refrence */
-
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -46,5 +45,6 @@ int main()
     printf("Student 1 Information :\n");
     /* print student 1 data after call by refrence (will change) */
     printf("Name : %s %s\nID: %d\nGrade:%f\n\n",s1.first_name,s1.second_name,s1.id,s1.grade);
+   
     return 0;
 }

@@ -1,5 +1,4 @@
 /* array of strings and pointer to strings */
-
 #include <stdio.h>
 
 int main()
@@ -13,8 +12,8 @@ int main()
 	short sArr2D[][5] = { {1, 2, 3, 4, 5} , {6, 7, 8, 9, 10} };
 	short *sPtr1 = sArr;
 
-	short (*sPtr2)[5] = sArr2D;     /* pointer to array of 5 elements (pointer to pointer) */
-	short *sPtr3[5];                /* array of 5 pointer to short data */
+	short (*sPtr2)[5] = sArr2D;/* pointer to array of 5 elements (pointer to pointer) */
+	short *sPtr3[5];           /* array of 5 pointer to short data */
 
 	printf("sizeof(str1) = %u\n", sizeof(str1)); /* 5 bytes */ 
 	printf("sizeof(str2) = %u\n", sizeof(str2)); /* 5 bytes + 1 for null '\0' */

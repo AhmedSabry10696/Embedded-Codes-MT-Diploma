@@ -1,5 +1,4 @@
 /* pass structure members by values or refrence */
-
 #include <stdio.h>
 
 /* stucture declaration */

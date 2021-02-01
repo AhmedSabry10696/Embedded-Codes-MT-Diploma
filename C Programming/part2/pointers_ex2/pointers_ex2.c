@@ -1,5 +1,4 @@
-/* App demonstarate the difference between passing variables by value and by reference */
-
+/* App demonstarates the difference between passing variables by value and by reference */
 #include <stdio.h>
 
 /* swap by refrence funtion */
@@ -21,6 +20,8 @@ void swap_pass_by_value(int x,int y)
     x = y;
     y = temp;
 
+    printf("%d %d\n", x,y);
+
     /* swap may be done using bitwise operations :
      * x = x ^ y;
      * y = x ^ y;
@@ -38,5 +39,6 @@ int main()
     
     swap_pass_by_reference(&num1,&num2);
     printf("The two numbers after using swapping by reference : %d %d\n",num1,num2);
+    
     return 0;
 }

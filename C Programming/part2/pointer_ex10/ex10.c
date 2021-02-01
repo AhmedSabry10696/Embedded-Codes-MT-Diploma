@@ -1,25 +1,24 @@
-/* program explain pointer to functions */
-
+/* program explains pointer to functions */
 #include <stdio.h>
 
 int add(int a,int b)
 {
-	return a+b;
+return a+b;
 }
 
 int sub(int a,int b)
 {
-	return a-b;
+return a-b;
 }
 
 int mul(int a, int b)
 {
-	return a*b;
+return a*b;
 }
 
 int division(int a,int b)
 {
-        return a/b;
+return a/b;
 }
 
 int main()
@@ -28,7 +27,8 @@ int main()
     int result;
     int operation;
 
-    int (*ptr_func)(int,int); /* pointer to function */
+    /* pointer to function that take 2 int and return int value */    
+    int (*ptr_func)(int,int); 
     
     /* take the required operation from the user */
     printf("please enter the required operation : \n0:add\t1:sub\t2:mul\t3:division\n");
@@ -49,12 +49,15 @@ int main()
         default: printf("Invalid input\n");
                  break;
     }
+
     printf("please enter two number for the operation: \n");
     /* take to numbers from the user to perform operation */
     fflush(stdout);
     scanf("%d %d",&x,&y);
     
-    result = (*ptr_func)(x,y);  /* call a function using pointer to function */
+    /* call a function using pointer to function */
+    result = (*ptr_func)(x,y);
     printf("result=%d\n",result);
+    
     return 0;
 }

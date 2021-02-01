@@ -1,5 +1,4 @@
-/* program to print array elements using different ways */
-
+/* program prints array elements using different ways */
 #include <stdio.h>
 
 int main( void )

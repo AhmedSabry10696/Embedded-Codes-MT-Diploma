@@ -1,12 +1,12 @@
-/* Program to find a certain number in array using Linear search algorithm */
-
+/* Program finds a certain number in array using Linear search algorithm */
 #include <stdio.h>
 
 int Linear_Search(int array[],int element,int n); /* linear search declaration */
 
 int main( void )
 {
-    const int size = 5; /* const stored in program memory */
+    /* const stored in program memory (slow) it's prefarable to use #define */
+    const int size = 5; 
     int i;
     int array[size];
     int location;
@@ -19,6 +19,7 @@ int main( void )
     	fflush(stdout);
         scanf("%d",&array[i]);
     }
+
     /* take a num to search for it in array */
     printf("Enter element for search: ");
     fflush(stdout);
@@ -33,11 +34,14 @@ int main( void )
     {
         printf("\nThe element at the location: %d",location);
     }
+
     return 0;
 }
 
-int Linear_Search(int array[],int element,int n){
+int Linear_Search(int array[],int element,int n)
+{
     int i;
+    
     for(i=0;i<n;i++)
     {
         if(element == array[i])

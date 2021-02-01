@@ -1,11 +1,11 @@
-/* program of 2D arrays */
-
+/* program calculates the sum of two 2D arrays */
 #include <stdio.h>
 
 int main()
 {
    int a[2][2], b[2][2], c[2][2];
    int i,j;
+
    printf("Enter the elements of 1st matrix\n");
    /* take elements of the first 2D array from user */
    for(i=0;i<2;++i)        /* loop till rows num */ 
@@ -17,6 +17,7 @@ int main()
             scanf("%d",&a[i][j]);
        }
    }
+
    printf("Enter the elements of 2nd matrix\n");
    /* take elements of the second 2D array */
    for(i=0;i<2;++i)
@@ -49,5 +50,6 @@ int main()
                 printf("\n");
       }
    }
+
 return 0;
 }

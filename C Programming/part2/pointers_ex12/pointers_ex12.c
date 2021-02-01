@@ -1,5 +1,4 @@
 /* pointer to functions */
-
 #include <stdio.h>
 
 int add(int a,int b)

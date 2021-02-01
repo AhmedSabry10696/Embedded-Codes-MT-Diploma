@@ -1,5 +1,4 @@
-/* program explain structures */
-
+/* program explains structures */
 #include <stdio.h>
 
 /* srucut declaration as a new datatype declaration */

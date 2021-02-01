@@ -1,5 +1,4 @@
-/* pass array element and pass the whole arrray by refrence */
-
+/* program passes array element and passes the whole arrray by refrence */
 #include<stdio.h>
 #define SIZE 5
 
@@ -21,6 +20,7 @@ int main( void )
 
     /* pass array a to modifyArray by reference */
     modifyArray( a, SIZE );   /* pass array by refrence (write array name only) */
+    
     printf( "The values of the modified array are:\n" );
     /* print array elements after modification */
     for ( i = 0; i < SIZE; i++ ) 
@@ -31,6 +31,7 @@ int main( void )
     printf("\nThe value of a[3] is %d\n", a[ 3 ] );
     modifyElement( a[ 3 ] );   /* pass element by value */
     printf( "The value of a[ 3 ] is %d\n", a[ 3 ] );
+    
     return 0; 
 }
 
