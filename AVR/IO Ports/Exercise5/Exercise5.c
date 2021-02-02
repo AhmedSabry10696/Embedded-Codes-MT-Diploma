@@ -6,7 +6,6 @@
 * switches is pull down
 * fcpu  --> 1 MHZ
 */
-
 #include <avr/io.h>
 int main(void)
 {

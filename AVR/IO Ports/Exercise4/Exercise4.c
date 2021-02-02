@@ -4,9 +4,8 @@
 * switch is pull down
 * fcpu --> 1 MHZ
 */
-
 #include <avr/io.h> 
-#include <util/delay.h>         /* Clock is 1Mhz by Default */
+#include <util/delay.h>   /* Clock is 1Mhz by Default */
 
 int main(void)
 {
