@@ -1,5 +1,5 @@
-/*  Description : Simple application to demonstrate how to use bit-fields
- *  to access IO HW registers.
+/*  Description : Simple application to demonstrate  
+ *  how to use bit-fields to access IO HW registers.
  */
 
 /*

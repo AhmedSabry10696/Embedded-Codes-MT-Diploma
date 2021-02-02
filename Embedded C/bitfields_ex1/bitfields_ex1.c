@@ -28,5 +28,6 @@ int main()
 	 printf( "Memory size occupied by status1 : %d\n", sizeof(status1)); /* 8 */
 	 printf( "Memory size occupied by status2 : %d\n", sizeof(status2)); /* 4 */
 	 printf( "Memory size occupied by status2 : %d\n", sizeof(status3)); /* 8 */
-    return 0;
+   
+   return 0;
 }

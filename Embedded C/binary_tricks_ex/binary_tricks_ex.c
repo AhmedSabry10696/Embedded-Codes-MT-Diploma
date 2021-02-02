@@ -1,8 +1,7 @@
 #include <stdio.h>
-#include <stdlib.h>
 
 /* Description :
- * function responsible for printing the binary representation for any integer number
+ * function prints the binary representation for any integer number
  */
 void print_binary(int num)
 {
@@ -13,11 +12,12 @@ void print_binary(int num)
     {
         ((num<<i) & mask) ? printf("1"):printf("0");
     }
+    
     printf("\n");
 }
 
 /* Description :
- * function responsible for printing the number of ones and zeros in the binay number
+ * function prints the number of ones and zeros in the binay number
  */
 void print_number_of_ones_zeros(int num)
 {

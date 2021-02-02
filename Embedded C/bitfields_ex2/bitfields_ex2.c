@@ -1,5 +1,4 @@
-/* program demonstrate bit fields */
-
+/* program demonstrates bit fields */
 #include <stdio.h>
 
 struct
@@ -7,7 +6,7 @@ struct
   unsigned int age : 3;
 } Age;
 
-int main( )
+int main(void)
 {
    Age.age = 4;
    printf( "Sizeof( Age ) : %d\n", sizeof(Age) );  /* size of structure */
