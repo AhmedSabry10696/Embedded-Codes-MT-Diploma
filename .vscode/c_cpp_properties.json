@@ -3,7 +3,8 @@
         {
             "name": "Win32",
             "includePath": [
-                "${workspaceFolder}/**"
+                "${workspaceFolder}/**",
+                "C:\\WinAVR-20100110\\avr\\include"
             ],
             "defines": [
                 "__AVR_ATmega16__"

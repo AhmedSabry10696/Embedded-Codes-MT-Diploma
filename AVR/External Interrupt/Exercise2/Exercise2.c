@@ -3,6 +3,9 @@
  * Main program 8 leds rolling every 0.5 second
  * FCPU --> 1 MHZ
 */
+#ifndef __AVR_ATmega16__
+	#define __AVR_ATmega16__
+#endif
 
 #include <avr/io.h>
 #include <util/delay.h>
@@ -16,7 +19,7 @@ unsigned char p;
 ISR(INT1_vect)         
 {
 	g_Interrupt_Flag = 1;
-	p = PORTC;        /* save the current state of portc */        
+	p = PORTC;  /* save the current state of portc */        
 }
 
 /* External INT1 enable and configuration function */
@@ -34,17 +37,16 @@ void INT1_Init(void)
 
 int main(void)
 {
-	/* Enable and configure external INT1 */
-	INT1_Init();           
+	INT1_Init(); 	/* Enable and configure external INT1 */
 
-	DDRC  = 0xFF;          /* Configure all PORTC pins as output pins */
-	PORTC = 0x01;          /* First led is on at the beginning (Positive Logic configuration) */
+	DDRC  = 0xFF;    /* Configure all PORTC pins as output pins */
+	PORTC = 0x01;    /* First led is on at the beginning (Positive Logic configuration) */
 
 	unsigned char i;
 
     while(1)
     {
-		if(g_Interrupt_Flag == 0)
+		if(g_Interrupt_Flag == 0) /* ideal case */
 		{
 			_delay_ms(500);
 			PORTC = (PORTC<<1); /* every time only one led is ON */
@@ -54,7 +56,7 @@ int main(void)
 			  }
 		}
 
-		else if(g_Interrupt_Flag == 1)
+		else if(g_Interrupt_Flag == 1) /* interrupt case */
 		{
 			/* flash 8 leds five times every 500 ms */
 			for(i = 0 ; i < 5 ; i++)
@@ -65,7 +67,7 @@ int main(void)
 				_delay_ms(500);
 			}
 			
-			PORTC = p;            /* last state of leds before interrupt */    
+			PORTC = p; /* last state of leds before interrupt */    
 			g_Interrupt_Flag = 0; /* after finish make flag = 0 again */
 		}
 	}
