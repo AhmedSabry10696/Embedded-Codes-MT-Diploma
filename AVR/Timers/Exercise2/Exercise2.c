@@ -1,5 +1,5 @@
 /*
-* cofigure timer1 in compare mode to toggle led every half second
+* cofigure timer0 in compare mode to toggle led every half second
 * led is postive logic
 * FCPU --> 1 MHZ
 * prescaler -- > 1024
@@ -23,12 +23,11 @@ ISR(TIMER0_COMP_vect)
 	}
 }
 
-/* For clock=1Mhz and prescale F_CPU/1024 every count will take 1ms
+/* For clock = 1Mhz and prescale F_CPU/1024 every count will take 1 ms
  * so we just need 250 counts to get 250ms every overflow. put initial timer counter=0  
  * and output compare register=250 0 --> 250 (250ms per overflow)
  * so we need timer to overflow 2 times to get a 0.5 second 
  */
- 
 void timer0_init_CTC_mode(unsigned char tick)
 {
 	TCNT0 = 0; /* timer initial value */
@@ -44,11 +43,12 @@ void timer0_init_CTC_mode(unsigned char tick)
 	TCCR0 = (1<<FOC0) | (1<<WGM01) | (1<<CS02) | (1<<CS00);
 }
 
-int main(void)
+void main(void)
 {
-	DDRC  |= (1<<PC0);         /* configure the led pin to be output pin */
-	PORTC &= ~(1<<PC0);        /* LED is off at the beginning(Positive Logic) */
-	SREG  |= (1<<7);           /* enable global interrupts in MC */
+	DDRC  |= (1<<PC0);   /* configure the led pin to be output pin */
+	PORTC &= ~(1<<PC0);  /* LED is off at the beginning(Positive Logic) */
+	
+	SREG  |= (1<<7);     /* enable global interrupts in MC */
 	timer0_init_CTC_mode(250); /* start the timer and set compare value to 250 */
     
 	while(1)

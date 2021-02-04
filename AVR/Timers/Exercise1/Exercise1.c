@@ -1,10 +1,9 @@
 /*
-* cofigure timer1 in normal mode to toggle led every half second
+* cofigure timer0 in normal mode to toggle led every half second
 * led is postive logic
 * FCPU --> 1 MHZ
 * prescaler -- > 1024
 */
-
 #include <avr/io.h>
 #include <util/delay.h>
 #include <avr/interrupt.h>
@@ -26,11 +25,10 @@ ISR(TIMER0_OVF_vect)
 }
 
 /* Description : 
- * For clock=1Mhz and prescale F_CPU/1024 every count will take 1ms
- * so put initial timer counter=0  0 --> 255 (256ms per overflow)
+ * For clock = 1Mhz and prescale F_CPU/1024 every count will take 1ms
+ * so put initial timer counter = 0  0 --> 255 (256ms per overflow)
  * so we need timer to overflow 2 times to get a 0.5 second 
  */
-
 void timer0_init_normal_mode(void)
 {
 	TCNT0 = 0; /* timer initial value */
@@ -45,7 +43,7 @@ void timer0_init_normal_mode(void)
 	TCCR0 = (1<<FOC0) | (1<<CS02) | (1<<CS00);
 }
 
-int main(void)
+ void main(void)
 {
 	DDRC  |= (1<<PC0);  /* configure the led pin to be output pin */
 	PORTC &= ~(1<<PC0); /* LED is off at the beginning(Positive Logic) */

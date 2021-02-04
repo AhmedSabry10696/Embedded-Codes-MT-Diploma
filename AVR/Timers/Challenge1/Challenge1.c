@@ -1,9 +1,8 @@
 /*
-* timer 0 normal mode to icreament 7 seg each 1 second and over flow after 9
+* timer 0 normal mode to icreament 7 seg each 1 second and overflow after 9
 * prescaler --> 256
 * FCPU --> 8 MHZ
 */
-
 #include <avr/io.h>
 #include <avr/interrupt.h>
 #include <util/delay.h>
@@ -13,11 +12,10 @@
 /* global variable */
 unsigned char tick=0;
 
-/* with clock = 8Mhz and prescale F_CPU/256 every count will take 32 us
+/* with clock = 8 Mhz and prescale F_CPU/256 every count will take 32 us
  * so put initial timer counter=0  0 --> 255 (255 * 32us = 8.16 ms per overflow)
  * so we need timer to overflow 123 times to get a 1 second 
  */
- 
 void Timer_init_Normal_Mode(void)
 {
 	TCNT0 = 0;	/* timer initial value */
@@ -46,7 +44,7 @@ ISR(TIMER0_OVF_vect)
 	}	
 }
 
-int main(void)
+void main(void)
 {
 	DDRC  = 0xFF;    /* Configure all pins in PORTC as output pins */
 	PORTC = 0;       /* Initialize the 7-seg display zero at the beginning */

@@ -6,15 +6,12 @@
   * duty cycle 50%  --> Half Maximum Speed
   * duty cycle 0%   --> Motor Stop
   */
- 
 #include <avr/io.h>
 
 void PWM_Timer0_Init(unsigned char set_duty_cycle)
 {	
 	TCNT0 = 0; /* initial timer value */
-	
 	OCR0  = set_duty_cycle;  /* compare value */
-	
 	DDRB  = DDRB | (1<<PB3); /* set OC0 as output pin --> pin where the PWM signal is generated from MC */
 	
 	/* Configure timer control register
@@ -26,7 +23,7 @@ void PWM_Timer0_Init(unsigned char set_duty_cycle)
 	TCCR0 = (1<<WGM00) | (1<<WGM01) | (1<<COM01) | (1<<CS01);
 }
 
-int main(void)
+void main(void)
 { 
 	PWM_Timer0_Init(128);  /* generate duty cycle 50% to get half motor speed */
 	

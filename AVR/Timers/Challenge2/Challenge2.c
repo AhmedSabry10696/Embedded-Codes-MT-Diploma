@@ -8,7 +8,6 @@
 * N/ 8 MHZ ---------> 1
 * N = 8
 */ 
-
 #include <avr/io.h>
 #include <util/delay.h>
 
