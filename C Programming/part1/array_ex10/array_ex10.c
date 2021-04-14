@@ -1,4 +1,13 @@
-/* program calculates the sum of two 2D arrays */
+/**
+ * @file array_ex10.c
+ * @author Ahmed Sabry (ahmed.sabry10696@gmail.com)
+ * @brief  calculate the sum of two 2D arrays
+ * @version 0.1
+ * @date 2021-04-14
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ */
 #include <stdio.h>
 
 int main()
@@ -8,9 +17,11 @@ int main()
 
    printf("Enter the elements of 1st matrix\n");
    /* take elements of the first 2D array from user */
-   for(i=0;i<2;++i)        /* loop till rows num */ 
+   /* loop till rows num */
+   for(i=0;i<2;++i)  
    {
-       for(j=0;j<2;++j)    /* loop till cols num */
+        /* loop till cols num */
+       for(j=0;j<2;++j)   
        {
             printf("Enter a[%d][%d]: ",i,j);
             fflush(stdout);

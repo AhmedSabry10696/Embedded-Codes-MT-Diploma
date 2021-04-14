@@ -1,10 +1,24 @@
-/* program prints the binary representation and number of 1's and 0's in a var */
+/**
+ * @file binary_tricks_ex.c
+ * @author Ahmed Sabry (ahmed.sabry10696@gmail.com)
+ * @brief prints binary representation and number of 1's and 0's in a var
+ * @version 0.1
+ * @date 2021-04-14
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ */
 #include <stdio.h>
 
-/* function responsible for printing the binary representation for any integer number */
+/**
+ * @brief print binary representation of an integer number
+ * 
+ * @param num num to print its binary representation
+ */
 void print_binary(int num)
 {
-    int i,mask=0x80000000;  /* mask =  0b100000000.... */
+     /* mask =  0b100000000.... */
+    int i,mask=0x80000000; 
     printf("The Binary Representation of number %d is : ",num);
     
     for(i=0;i<32;i++)
@@ -14,11 +28,17 @@ void print_binary(int num)
     printf("\n");
 }
 
-/* function responsible for printing the number of ones and zeros in the binay number */
+/**
+ * @brief print number of ones and zeros in a binay number of an integer number
+ * 
+ * @param num number to print its number on ones and zeros.
+ */
 void print_number_of_ones_zeros(int num)
 {
-    int i,mask=0x80000000;   /* mask = 0b 100000.... */
+     /* mask = 0b 100000.... */
+    int i,mask=0x80000000;  
     int ones_count=0,zeros_count=0;
+    
     for(i=0;i<32;i++)
     {
         ((num<<i) & mask) ? ones_count++:zeros_count++;

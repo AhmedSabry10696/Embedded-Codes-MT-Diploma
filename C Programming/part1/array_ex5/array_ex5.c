@@ -1,10 +1,17 @@
-/* program that explains the difference bet static and non-static data 
- * static doesn't poped from stack after the function ended
+/**
+ * @file array_ex5.c
+ * @author Ahmed Sabry(ahmed.sabry10696@gmail.com)
+ * @brief Static and non-static data
+ * @version 0.1
+ * @date 2021-04-14
+ * 
+ * @copyright Copyright (c) 2021
+ * 
  */
 #include <stdio.h>
 
-void staticArrayInit( void );      /* static func declaration */
-void automaticArrayInit( void );   /* non static function declartion */
+void staticArrayInit( void );
+void automaticArrayInit( void );   
 
 int main( void )
 {
@@ -19,6 +26,10 @@ int main( void )
     return 0; 
 }
 
+/**
+ * @brief Static function definition
+ * 
+ */
 void staticArrayInit( void )
 {
     static int array1[ 3 ]; /* static keyword init arr elements to 0 */
@@ -39,6 +50,10 @@ void staticArrayInit( void )
     } 
 }
 
+/**
+ * @brief non-static function definition
+ * 
+ */
 void automaticArrayInit( void )
 {
     int array2[ 3 ] = { 1, 2, 3 };

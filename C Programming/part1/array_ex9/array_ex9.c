@@ -1,4 +1,13 @@
-/* program provides some operation on string */
+/**
+ * @file array_ex9.c
+ * @author Ahmed Sabry (ahmed.sabry10696@gmail.com)
+ * @brief provide some operation on string
+ * @version 0.1
+ * @date 2021-04-14
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ */
 #include <stdio.h>
 #include <string.h>
 
@@ -6,8 +15,11 @@ int main()
 {
     int len1,len2,comp;
     char str1[20]="Hello",str2[20];
-    strcpy(str2,"world");          /* to assign str to array of char use strcpy(dest,source) */
-    printf("%s %s\n",str1,str2);   /* print str1 beside str2 */
+   
+    /* to assign str to array of char use strcpy(dest,source) */
+    strcpy(str2,"world"); 
+    /* print str1 beside str2 */
+    printf("%s %s\n",str1,str2);   
 
     /* concatenate or combine both str1 & str2 to str1 */
     strcat(str1,str2);

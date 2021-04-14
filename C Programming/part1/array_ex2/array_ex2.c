@@ -1,4 +1,13 @@
-/* sum and average of array elements */
+/**
+ * @file array_ex2.c
+ * @author Ahmed Sabry(ahmed.sabry10696@gmail.com)
+ * @brief sum and average of array elements
+ * @version 0.1
+ * @date 2021-04-14
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ */
 #include <stdio.h>
 #define arr_size 5 
 

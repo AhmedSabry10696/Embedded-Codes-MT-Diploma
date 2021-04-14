@@ -1,16 +1,34 @@
-/* Program sorts the array elements using selection sorting algorithm */
+/**
+ * @file array_ex8.c
+ * @author Ahmed Sabry (ahmed.sabry10696@gmail.com)
+ * @brief sort the array elements using selection sort algorithm
+ * @version 0.1
+ * @date 2021-04-14
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ */
 #include <stdio.h>
 
+/**
+ * @brief sort array elements using selection sort algorithm
+ * 
+ * @param array array name
+ * @param size array size
+ */
 void selection_sorting(int array[],const int size)
 {
     int i,j,min,temp;
     
-    for(i=0 ; i<size-1 ; i++) /* loop till the element before the last element */
+    /* loop till the element before the last element */
+    for(i=0 ; i<size-1 ; i++) 
     {
         min=i;
-        for(j=i+1 ; j<size ; j++)   /* loop from the second element  to the last element */
+        /* loop from the second element  to the last element */
+        for(j=i+1 ; j<size ; j++)  
         {
-            if(array[min]>array[j]) /* compare each element with the following elements */ 
+            /* compare each element with the following elements */ 
+            if(array[min]>array[j]) 
                 min=j;
         }
         /* swap operation */ 

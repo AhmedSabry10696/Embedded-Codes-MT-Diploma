@@ -1,13 +1,23 @@
-/* program passes array element and passes the whole arrray by refrence */
+/**
+ * @file array_ex6.c
+ * @author Ahmed Sabry (ahmed.sabry10696@gmail.com)
+ * @brief pass by value and pass by refrence
+ * @version 0.1
+ * @date 2021-04-14
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ */
 #include<stdio.h>
 #define SIZE 5
 
-void modifyArray( int b[], int size );  /* modify array declaration */
-void modifyElement( int e );            /* modify element declaration */
+void modifyArray( int b[], int size );  
+void modifyElement( int e );
 
 int main( void )
 {
-    int a[SIZE] = { 0, 1, 2, 3, 4 };   /* array inint */
+    /* array inint */
+    int a[SIZE] = { 0, 1, 2, 3, 4 };   
     int i;
 
     printf("values of the original array are:\n" );
@@ -29,13 +39,20 @@ int main( void )
     }
     
     printf("\nThe value of a[3] is %d\n", a[ 3 ] );
-    modifyElement( a[ 3 ] );   /* pass element by value */
+    
+    /* pass element by value */
+    modifyElement( a[ 3 ] );  
     printf( "The value of a[ 3 ] is %d\n", a[ 3 ] );
     
     return 0; 
 }
 
-/* modify the whole array done only by refrence */
+/**
+ * @brief pass the whole array done only by refrence 
+ * 
+ * @param b array name
+ * @param size array size
+ */
 void modifyArray( int b[], int size )
 {
     int j; 
@@ -45,7 +62,11 @@ void modifyArray( int b[], int size )
     }
 }
 
-/* modify element from arr may be done by value or refrence her done by value */
+/**
+ * @brief modify element from arr may be done by value or refrence
+ * 
+ * @param e array element
+ */
 void modifyElement( int e )  
 {
     printf( "Value in modifyElement is %d\n", e *= 2 );

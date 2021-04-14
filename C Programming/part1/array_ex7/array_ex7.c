@@ -1,7 +1,16 @@
-/* Program finds a certain number in array using Linear search algorithm */
+/**
+ * @file array_ex7.c
+ * @author Ahmed Sabry (ahmed.sabry10696@gmail.com)
+ * @brief finds a certain number in array using Linear search algorithm
+ * @version 0.1
+ * @date 2021-04-14
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ */
 #include <stdio.h>
 
-int Linear_Search(int array[],int element,int n); /* linear search declaration */
+int Linear_Search(int array[],int element,int n);
 
 int main( void )
 {
@@ -26,6 +35,7 @@ int main( void )
     scanf("%d",&element);
 
     location = Linear_Search(array,element,size);
+    
     if(location == -1)
     {
         printf("\nElement not found\n");
@@ -38,6 +48,14 @@ int main( void )
     return 0;
 }
 
+/**
+ * @brief get index of of certain element in array
+ * 
+ * @param array array name
+ * @param element  element to search about
+ * @param n array size
+ * @return int 
+ */
 int Linear_Search(int array[],int element,int n)
 {
     int i;
@@ -45,7 +63,11 @@ int Linear_Search(int array[],int element,int n)
     for(i=0;i<n;i++)
     {
         if(element == array[i])
-            return (i);         /* return index of element if founded in array */
+        {
+            /* return index of element if founded in array */
+            return (i);         
+        }
     }
-    return -1;                  /* if not founded return -1 */ 
+    /* if not founded return -1 */ 
+    return -1;               
 }
