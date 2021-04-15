@@ -1,13 +1,25 @@
-/* pointer with 2D arrays
- * pointer to array
-*/
+/**
+ * @file pointers_ex7.c
+ * @author Ahmed Sabry (ahmed.sabry10696@gmail.com)
+ * @brief pointer to array 
+ * @version 0.1
+ * @date 2021-04-14
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ */
+
 #include <stdio.h>
 
 int main()
 {
 	long i,j;
-	long Arr2D[2][2] = { {1,2} , {3,4} };  /* 2D arr init */
-	long (*Arr2D_ptr)[2] = Arr2D; /* pointer to array of 2 elements (pointer to pointer) */
+	
+	/* 2D array init */
+	long Arr2D[2][2] = { {1,2} , {3,4} };
+
+	/* pointer to array of 2 elements (pointer to pointer) */
+	long (*Arr2D_ptr)[2] = Arr2D; 
 
 	printf("Start Address of the first Array : %p\n", &Arr2D[0][0]);
 	printf("Start Address of the first Array : %p\n", Arr2D);
@@ -19,7 +31,8 @@ int main()
 	 * increament or decreament with pointer isn't arthmatic increament or decreament
 	*/
 	
-	Arr2D_ptr++; /* increamented by array size to point to the next array of the 2D arr */
+	/* increamented by array size to point to the next array of the 2D arr */
+	Arr2D_ptr++;
 
 	printf("Start Address of the second Array : %p\n", &Arr2D[1][0]);
 	printf("Start Address of the second Array : %p\n", Arr2D+1);

@@ -1,24 +1,33 @@
-/* program explains pointer to functions */
+/**
+ * @file ex10.c
+ * @author Ahmed Sabry (ahmed.sabry10696@gmail.com)
+ * @brief explains how pointer to function works
+ * @version 0.1
+ * @date 2021-04-14
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ */
 #include <stdio.h>
 
 int add(int a,int b)
 {
-return a+b;
+    return a+b;
 }
 
 int sub(int a,int b)
 {
-return a-b;
+    return a-b;
 }
 
 int mul(int a, int b)
 {
-return a*b;
+    return a*b;
 }
 
 int division(int a,int b)
 {
-return a/b;
+    return a/b;
 }
 
 int main()
@@ -56,6 +65,7 @@ int main()
     scanf("%d %d",&x,&y);
     
     /* call a function using pointer to function */
+    /* Another method -->  result = ptr_func(x,y) */
     result = (*ptr_func)(x,y);
     printf("result=%d\n",result);
     

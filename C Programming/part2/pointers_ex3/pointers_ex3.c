@@ -1,8 +1,20 @@
-/* App finds and display a certain number in array */
+/**
+ * @file pointers_ex3.c
+ * @author Ahmed Sabry (ahmed.sabry10696@gmail.com)
+ * @brief find and display a certain number in array
+ * @version 0.1
+ * @date 2021-04-14
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ */
+
 #include <stdio.h>
 
-#define size 10   /* preprocessor operation just text replacement */
-int Linear_Search(int *arr_ptr,int element,int n); /* function declaration */
+/* preprocessor operation just text replacement */
+#define size 10   
+
+int Linear_Search(int *arr_ptr,int element,int n);
 
 int main( void )
 {
@@ -24,7 +36,7 @@ int main( void )
     fflush(stdout);
     scanf("%d",&element);
 
-    location=Linear_Search(array,element,size);
+    location = Linear_Search(array,element,size);
     if(location == -1)
     {
         printf("\nElement not found\n");
@@ -36,14 +48,25 @@ int main( void )
 
 }
 
-/* fucntion to find certain element in array */
+/**
+ * @brief find a certain element in array
+ * 
+ * @param arr_ptr array name
+ * @param element element to search for
+ * @param n array size
+ * @return int 
+ */
 int Linear_Search(int *arr_ptr,int element,int n)
 {
     int i;
     for(i=0;i<n;i++)
     {
         if(element == arr_ptr[i])
-            return (i);   /* retuen index of element if founded in the stack */
+        {
+            /* retuen index of element if founded in the stack */
+            return (i);
+        }
     }
-    return -1; /* element not found */
+    /* element not found */
+    return -1; 
 }

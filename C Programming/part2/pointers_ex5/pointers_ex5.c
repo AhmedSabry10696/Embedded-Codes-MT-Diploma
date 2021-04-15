@@ -1,4 +1,14 @@
-/* program prints array elements using different ways */
+/**
+ * @file pointers_ex5.c
+ * @author Ahmed Sabry (ahmed.sabry10696@gmail.com)
+ * @brief print array elements using different ways
+ * @version 0.1
+ * @date 2021-04-14
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ */
+
 #include <stdio.h>
 
 int main( void )

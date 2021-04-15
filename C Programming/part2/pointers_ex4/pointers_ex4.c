@@ -1,4 +1,14 @@
-/* Program demonstrates the relation between pointers and arrays */
+/**
+ * @file pointers_ex4.c
+ * @author Ahmed Sabry (ahmed.sabry10696@gmail.com)
+ * @brief demonstrate the relation between pointers and arrays
+ * @version 0.1
+ * @date 2021-04-14
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ */
+
 #include <stdio.h>
 
 int main()
@@ -14,7 +24,7 @@ int main()
         printf("%p\t",arr+i);
     }
 
-    /* print array elements addresses usint pointer */
+    /* print array elements addresses using pointer */
     printf("\nFirst Element Address: %p\n",p_arr);
     p_arr++;
     printf("Second Element Address: %p\n",p_arr);

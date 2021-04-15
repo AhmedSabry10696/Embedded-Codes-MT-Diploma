@@ -1,4 +1,14 @@
-/* array of strings and pointer to strings */
+/**
+ * @file pointers_ex8.c
+ * @author Ahmed Sabry (ahmed.sabry10696@gmail.com)
+ * @brief array of strings and pointer to strings
+ * @version 0.1
+ * @date 2021-04-14
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ */
+
 #include <stdio.h>
 
 int main()
@@ -12,8 +22,11 @@ int main()
 	short sArr2D[][5] = { {1, 2, 3, 4, 5} , {6, 7, 8, 9, 10} };
 	short *sPtr1 = sArr;
 
-	short (*sPtr2)[5] = sArr2D;/* pointer to array of 5 elements (pointer to pointer) */
-	short *sPtr3[5];           /* array of 5 pointer to short data */
+	/* pointer to array of 5 elements (pointer to pointer) */
+	short (*sPtr2)[5] = sArr2D;
+
+	/* array of 5 pointer to short data */
+	short *sPtr3[5];           
 
 	printf("sizeof(str1) = %u\n", sizeof(str1)); /* 5 bytes */ 
 	printf("sizeof(str2) = %u\n", sizeof(str2)); /* 5 bytes + 1 for null '\0' */
@@ -33,5 +46,6 @@ int main()
 	printf("sPtr2[0][0] = %d, sPtr2[1][2] = %d\n", sPtr2[0][0], sPtr2[1][2]);
 	printf("*(* (sArr2D + 1) + 2) = %d\n", *(* (sArr2D + 1) + 2)); /* same as sArr2D[1][2] */
 	printf("*(*(sArr2D) + 1*5 + 2) = %d\n\n", *(*(sArr2D) + 1*5 + 2)); /* same as sArr2D[1][2] */
+
 	return 0;
 }
