@@ -1,5 +1,5 @@
 /**
- * @file std_types.h
+ * @file STD_TYPES.h
  * @author Ahmed Sabry (ahmed.sabry10696@gmail.com)
  * @brief standard types file
  * @version 0.1

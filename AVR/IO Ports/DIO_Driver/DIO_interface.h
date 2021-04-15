@@ -11,7 +11,7 @@
 #ifndef _DIO_INT_H
 #define _DIO_INT_H
 
-#include "std_types.h"
+#include "STD_TYPES.h"
 #include "common_macros.h"
 
 /* Port Defines */
