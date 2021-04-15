@@ -1,10 +1,13 @@
-/** @file    STD_TYPE.h
- ** @brief   Standard Types header file for this program 
- ** @author  Ahmed Sabry
- ** @date    22/1/2014
- ** @version 1.0
+/**
+ * @file std_types.h
+ * @author Ahmed Sabry (ahmed.sabry10696@gmail.com)
+ * @brief standard types file
+ * @version 0.1
+ * @date 2021-04-15
+ * 
+ * @copyright Copyright (c) 2021
+ * 
  */
-
 #ifndef STD_TYPES_H_
 #define STD_TYPES_H_
 
