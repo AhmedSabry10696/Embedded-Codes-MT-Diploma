@@ -1,7 +1,19 @@
-/* program explains structures */
+/**
+ * @file struct_ex1.c
+ * @author Ahmed Sabry (ahmed.sabry10696@gmail.com)
+ * @brief explain structure
+ * @version 0.1
+ * @date 2021-04-15
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ */
 #include <stdio.h>
 
-/* srucut declaration as a new datatype declaration */
+/**
+ * @brief struct declaration
+ * 
+ */
 struct student
 {
     char *first_name;
@@ -12,7 +24,8 @@ struct student
 
 int main()
 {
-    struct student s1={ "Mohamed", "Tarek" , 1 , 95.75 }; /* init like array must be in th */
+    
+    struct student s1={ "Ahmed", "Sabry" , 1 , 95.75 };
     struct student s2,s3;
 
     s2.first_name = "Ahmed";

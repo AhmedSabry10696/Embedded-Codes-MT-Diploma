@@ -1,19 +1,34 @@
-/* program explains structure and array of structures */
+/**
+ * @file struct_ex2.c
+ * @author Ahmed Sabry (ahmed.sabry10696@gmail.com)
+ * @brief structure and array of structure
+ * @version 0.1
+ * @date 2021-04-15
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ */
 #include<stdio.h>
 #include<string.h>
 
-/* structure declaration */
+/**
+ * @brief struct declaration
+ * 
+ */
 struct student
 {
     int id;
     char name[30];
-}record[2],s1;    /* define arr of two stuctures and sruct called s1 */
+}record[2],s1;    
+/* define arr of two stuctures and sruct called s1 */
 
 void main()
 {
+    /* init the first structure in array */
     record[0].id=1;
-    strcpy(record[0].name, "Khaled"); /* assign str value to arr */
+    strcpy(record[0].name, "Khaled"); 
 
+    /* init the second structure in array */
     record[1].id=2;
     strcpy(record[1].name, "Ayman");
 

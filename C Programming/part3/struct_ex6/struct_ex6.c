@@ -1,14 +1,29 @@
-/* pointer to structures */
+/**
+ * @file struct_ex6.c
+ * @author Ahmed Sabry (ahmed.sabry10696@gmail.com)
+ * @brief pointer to struct
+ * @version 0.1
+ * @date 2021-04-15
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ */
 #include <stdio.h>
 
-/* struct declaration */
+/**
+ * @brief struct declaration
+ * 
+ */
 struct student
 {
     char *first_name;
     char *second_name;
     int id;
     float grade;
-    struct student *struct_ptr; /* allowed to make pointer to struct inside itslef */
+
+    /* allowed to make pointer to struct inside itslef */
+    struct student *struct_ptr; 
+    
     /* struct student s1;
      * not allowed to define struct inside itself
     */
@@ -16,15 +31,18 @@ struct student
 
 int main()
 {
-    /* write s1 values using s_ptr */
+    /* init s1 values */
     s1.first_name = "Ahmed";
     s1.second_name = "Sabry";
     s1.id = 1;
     s1.grade = 95.75;
-    s1.struct_ptr = &s2; /* pointer to s2 student structure object */
+
+     /* pointer to s2 student structure object */
+    s1.struct_ptr = &s2;
 
     /* change s2 values using the pointer in s1 */
-    s1.struct_ptr->first_name = "Ahmed";   /* (*s1.struct_ptr).first_name = "Ahmed"; */
+    /* (*s1.struct_ptr).first_name = "Ahmed"; */
+    s1.struct_ptr->first_name = "Ahmed";   
     s1.struct_ptr->second_name = "Khaled";
     s1.struct_ptr->id = s1.id+1;
     s1.struct_ptr->grade = 70;
