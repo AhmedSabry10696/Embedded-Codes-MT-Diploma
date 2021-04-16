@@ -29,10 +29,10 @@ void DIO_voidSetPinValue(uint8 u8PortIdCopy , uint8 u8PinIdCopy, uint8 u8PinValC
 			/* Check on the Required PORT Number */
 			switch (u8PortIdCopy)
 			{
-				case DIO_u8_PORTA: SET_BIT(PORTA_Register,u8PinIdCopy); break;
-				case DIO_u8_PORTB: SET_BIT(PORTB_Register,u8PinIdCopy); break;
-				case DIO_u8_PORTC: SET_BIT(PORTC_Register,u8PinIdCopy); break;
-				case DIO_u8_PORTD: SET_BIT(PORTD_Register,u8PinIdCopy); break;
+				case DIO_u8_PORTA: SET_BIT(PORTA_Reg,u8PinIdCopy); break;
+				case DIO_u8_PORTB: SET_BIT(PORTB_Reg,u8PinIdCopy); break;
+				case DIO_u8_PORTC: SET_BIT(PORTC_Reg,u8PinIdCopy); break;
+				case DIO_u8_PORTD: SET_BIT(PORTD_Reg,u8PinIdCopy); break;
 			}
 		
 		}
@@ -42,10 +42,10 @@ void DIO_voidSetPinValue(uint8 u8PortIdCopy , uint8 u8PinIdCopy, uint8 u8PinValC
 			/* Check on the Required PORT Number */
 			switch (u8PortIdCopy)
 			{
-				case DIO_u8_PORTA: CLEAR_BIT(PORTA_Register,u8PinIdCopy); break;
-				case DIO_u8_PORTB: CLEAR_BIT(PORTB_Register,u8PinIdCopy); break;
-				case DIO_u8_PORTC: CLEAR_BIT(PORTC_Register,u8PinIdCopy); break;
-				case DIO_u8_PORTD: CLEAR_BIT(PORTD_Register,u8PinIdCopy); break;
+				case DIO_u8_PORTA: CLEAR_BIT(PORTA_Reg,u8PinIdCopy); break;
+				case DIO_u8_PORTB: CLEAR_BIT(PORTB_Reg,u8PinIdCopy); break;
+				case DIO_u8_PORTC: CLEAR_BIT(PORTC_Reg,u8PinIdCopy); break;
+				case DIO_u8_PORTD: CLEAR_BIT(PORTD_Reg,u8PinIdCopy); break;
 			}
 		}
 	
@@ -78,10 +78,10 @@ uint8 DIO_u8GetPinValue(uint8 u8PortIdCopy, uint8 u8PinIdCopy)
 		/* Check on the Required PORT Number */
 		switch (u8PortIdCopy)
 		{
-			case DIO_u8_PORTA: u8ResultLocal= GET_BIT(PINA_Register,u8PinIdCopy); break;
-			case DIO_u8_PORTB: u8ResultLocal= GET_BIT(PINB_Register,u8PinIdCopy); break;
-			case DIO_u8_PORTC: u8ResultLocal= GET_BIT(PINC_Register,u8PinIdCopy); break;
-			case DIO_u8_PORTD: u8ResultLocal= GET_BIT(PIND_Register,u8PinIdCopy); break;
+			case DIO_u8_PORTA: u8ResultLocal= GET_BIT(PINA_Reg,u8PinIdCopy); break;
+			case DIO_u8_PORTB: u8ResultLocal= GET_BIT(PINB_Reg,u8PinIdCopy); break;
+			case DIO_u8_PORTC: u8ResultLocal= GET_BIT(PINC_Reg,u8PinIdCopy); break;
+			case DIO_u8_PORTD: u8ResultLocal= GET_BIT(PIND_Reg,u8PinIdCopy); break;
 		}
 	}
 	
@@ -111,10 +111,10 @@ void DIO_voidSetPinDirection  (uint8 u8PortIdCopy, uint8 u8PinIdCopy, uint8 u8Pi
 			/* Check on the Required PORT Number */
 			switch (u8PortIdCopy)
 			{
-				case DIO_u8_PORTA: SET_BIT(DDRA_Register,u8PinIdCopy); break;
-				case DIO_u8_PORTB: SET_BIT(DDRB_Register,u8PinIdCopy); break;
-				case DIO_u8_PORTC: SET_BIT(DDRC_Register,u8PinIdCopy); break;
-				case DIO_u8_PORTD: SET_BIT(DDRD_Register,u8PinIdCopy); break;
+				case DIO_u8_PORTA: SET_BIT(DDRA_Reg,u8PinIdCopy); break;
+				case DIO_u8_PORTB: SET_BIT(DDRB_Reg,u8PinIdCopy); break;
+				case DIO_u8_PORTC: SET_BIT(DDRC_Reg,u8PinIdCopy); break;
+				case DIO_u8_PORTD: SET_BIT(DDRD_Reg,u8PinIdCopy); break;
 			}
 		}
 		
@@ -123,10 +123,10 @@ void DIO_voidSetPinDirection  (uint8 u8PortIdCopy, uint8 u8PinIdCopy, uint8 u8Pi
 			/* Check on the Required PORT Number */
 			switch (u8PortIdCopy)
 			{
-				case DIO_u8_PORTA: CLEAR_BIT(DDRA_Register,u8PinIdCopy); break;
-				case DIO_u8_PORTB: CLEAR_BIT(DDRB_Register,u8PinIdCopy); break;
-				case DIO_u8_PORTC: CLEAR_BIT(DDRC_Register,u8PinIdCopy); break;
-				case DIO_u8_PORTD: CLEAR_BIT(DDRD_Register,u8PinIdCopy); break;
+				case DIO_u8_PORTA: CLEAR_BIT(DDRA_Reg,u8PinIdCopy); break;
+				case DIO_u8_PORTB: CLEAR_BIT(DDRB_Reg,u8PinIdCopy); break;
+				case DIO_u8_PORTC: CLEAR_BIT(DDRC_Reg,u8PinIdCopy); break;
+				case DIO_u8_PORTD: CLEAR_BIT(DDRD_Reg,u8PinIdCopy); break;
 			}
 		}
 		
@@ -153,10 +153,10 @@ void DIO_voidSetPortDirection (uint8 u8PortId, uint8 u8PortDir)
 	/* Check on the Required PORT Number */
 	switch (u8PortId)
 	{
-		case     DIO_u8_PORTA: DDRA_Register = u8PortDir; break;
-		case     DIO_u8_PORTB: DDRB_Register = u8PortDir; break;
-		case     DIO_u8_PORTC: DDRC_Register = u8PortDir; break;
-		case     DIO_u8_PORTD: DDRD_Register = u8PortDir; break;
+		case     DIO_u8_PORTA: DDRA_Reg = u8PortDir; break;
+		case     DIO_u8_PORTB: DDRB_Reg = u8PortDir; break;
+		case     DIO_u8_PORTC: DDRC_Reg = u8PortDir; break;
+		case     DIO_u8_PORTD: DDRD_Reg = u8PortDir; break;
 		default: /* Wrong Port ID */       break;
 	}
 }
@@ -172,10 +172,10 @@ void DIO_voidSetPortValue(uint8 u8PortId, uint8 u8PortVal)
 	/* Check on the Required PORT Number */
 	switch (u8PortId)
 	{
-		case     DIO_u8_PORTA: PORTA_Register = u8PortVal; break;
-		case     DIO_u8_PORTB: PORTB_Register = u8PortVal; break;
-		case     DIO_u8_PORTC: PORTC_Register = u8PortVal; break;
-		case     DIO_u8_PORTD: PORTD_Register = u8PortVal; break;
+		case     DIO_u8_PORTA: PORTA_Reg = u8PortVal; break;
+		case     DIO_u8_PORTB: PORTB_Reg = u8PortVal; break;
+		case     DIO_u8_PORTC: PORTC_Reg = u8PortVal; break;
+		case     DIO_u8_PORTD: PORTD_Reg = u8PortVal; break;
 		default: /* Wrong Port ID */        break;
 	}
 }
