@@ -1,37 +1,59 @@
-/*
- * configure INT0 as a pull down to toggle led as a negative logic
- * FCPU --> 1 MHZ
-*/
-#ifndef __AVR_ATmega16__
-	#define __AVR_ATmega16__
-#endif
-
+/**
+ * @file Exercise1.c
+ * @author Ahmed Sabry (ahmed.sabry10696@gmail.com)
+ * @brief configure INT0 as a pull down to toggle led as a negative logic
+ * @version 0.1
+ * @date 2021-04-16
+ * @copyright Copyright (c) 2021
+ * 
+ */
 #include <avr/io.h>
-#include <avr/interrupt.h>    /* to use interrupt */
+#include <avr/interrupt.h>
 
-/* External INT0 Interrupt Service Routine */
+/**
+ * @brief Construct a new ISR object
+ * 
+ */
 ISR(INT0_vect)                   
 {
-	PORTC = PORTC ^ (1<<PC0);   /* toggle led state */
+	 /* toggle led state */
+	PORTC = PORTC ^ (1<<PC0);  
 }
 
-/* External INT0 enable and configuration function */
+/**
+ * @brief External INT0 enable and configuration function 
+ * 
+ */
 void INT0_Init(void)           
 {
-	SREG  &= ~(1<<7);          /* Disable interrupts by clearing I-bit */
-	DDRD  &= (~(1<<PD2));      /* Configure INT0/PD2 as input pin */
-	GICR  |= (1<<INT0);        /* Enable external interrupt pin INT0 */
-	MCUCR |= (1<<ISC00) | (1<<ISC01); /* Trigger INT0 with the raising edge pull down switch */
-	SREG  |= (1<<7);           /* Enable interrupts by setting I-bit */
+	/* Disable global interrupt by clearing I-bit */
+	SREG  &= ~(1<<7);        
+
+	/* Configure INT0/PD2 as input pin */
+	DDRD  &= (~(1<<PD2));      
+
+	 /* Enable external interrupt pin INT0 */
+	GICR  |= (1<<INT0);       
+
+	/* Trigger INT0 with the raising edge pull down switch */
+	MCUCR |= (1<<ISC00) | (1<<ISC01); 
+	
+	/* Enable global interrupt by setting I-bit */
+	SREG  |= (1<<7);           
 }
 
 int main(void)
 {
-	INT0_Init(); /* Enable external INT0 */
+	 /* Enable external INT0 */
+	INT0_Init();
 
-	DDRC  = DDRC | (1<<PC0);  /* Configure pin PC0 in PORTC as output pin */
-	PORTC = PORTC | (1<<PC0); /* Initialization Led is off at the beginning(Negative Logic) */
-    while(1)
+	/* Configure pin PC0 in PORTC as output pin */
+	DDRC  = DDRC | (1<<PC0);  
+
+	/* Initialization Led is off at the beginning(Negative Logic) */
+	PORTC = PORTC | (1<<PC0); 
+    
+	while(1)
     {
 		/* do no thing */				
 	}					
