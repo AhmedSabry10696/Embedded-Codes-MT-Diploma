@@ -1,17 +1,26 @@
-/*
-* switch increase the numbers appears on 7 seg and overflow after 9
-* 7 seg is connected to decoder so could control using 4 lines only
-* switch is pull down
-* fcpu --> 1 MHZ
-*/
+/**
+ * @file Exercise4.c
+ * @author Ahmed Sabry (ahmed.sabry10696@gmail.com)
+ * @brief pull down button increament 7 segment number
+ * @version 0.1
+ * @date 2021-04-16
+ * @copyright Copyright (c) 2021
+ * 
+ */
 #include <avr/io.h> 
-#include <util/delay.h>   /* Clock is 1Mhz by Default */
+/* Clock is 1Mhz by Default */
+#include <util/delay.h>   
 
 int main(void)
 {
-	unsigned char num = 0;       /* for pass it to 7 seg */
-	DDRD  = DDRD & (~(1<<PD4));  /* configure pin 4 of PORTD to be input pin */
-	DDRC |= 0x0F; /* configure least 4 pins of PORTC as output pins */
+	/* var to pass it to 7 seg */
+	unsigned char num = 0; 
+
+	/* configure pin 4 of PORTD to be input pin */      
+	DDRD  = DDRD & (~(1<<PD4));  
+
+	/* configure least 4 pins of PORTC as output pins */
+	DDRC |= 0x0F; 
 	
 	/* initialize the 7-segment */
 	PORTC &= ~((1<<PC0) | (1<<PC1) | (1<<PC2) | (1<<PC3));
@@ -21,7 +30,8 @@ int main(void)
 		/* check if the push button is pressed or not */
 		if( PIND & (1<<PD4) )
 		{
-			_delay_ms(30);  /* debouncing delay */
+			  /* debouncing delay */
+			_delay_ms(30);
 
 			if( PIND & (1<<PD4) )
 			{
@@ -29,16 +39,17 @@ int main(void)
 				{
 					/* if overflow occurs */
 					num = 0;
-					PORTC = (PORTC & 0xF0) | (num & 0x0F);
 				}
 				else
 				{
 					/* increment 7-segment every press */
 					num++;
-					PORTC = (PORTC & 0xF0) | (num & 0x0F);
 				}
+				PORTC = (PORTC & 0xF0) | (num & 0x0F);
+
 			}
-			while( PIND & (1<<PD4) ){} /* wait until switch is released */
+			/* wait until switch is released */
+			while( PIND & (1<<PD4) ){} 
 		}									   
     }
 }

@@ -1,21 +1,32 @@
-/* 
- * flash led every 1 second
- * fcpu --> 8 MHZ
-*/
+/**
+ * @file Exercise1.c
+ * @author Ahmed Sabry (ahmed.sabry10696@gmail.com)
+ * @brief Flash led every 1 second
+ * @version 0.1
+ * @date 2021-04-16
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ */
 #include <avr/io.h>
 #include <util/delay.h>
 
 int main(void)
 {
-	DDRD = DDRD | (1<<PD6);  /* configure pin 6 in PORTD as output pin */
-	PORTD |= (1<<PD6);       /* LED Off (negative logic) */
+	/* configure pin 6 in PORTD as output pin */
+	DDRD = DDRD | (1<<PD6);  
+	
+	/* LED Off (negative logic) */
+	PORTD |= (1<<PD6);       
 
 	while(1)
     {
-		PORTD = PORTD & (~(1<<PD6)); /* LED On (0) */
+		/* LED On (0) */
+		PORTD = PORTD & (~(1<<PD6)); 
 		_delay_ms(1000);
 		
-		PORTD = PORTD | (1<<PD6);    /* LED off (1) */
+		/* LED off (1) */
+		PORTD = PORTD | (1<<PD6);   
 		_delay_ms(1000);
 
 		/************ Another Method *************

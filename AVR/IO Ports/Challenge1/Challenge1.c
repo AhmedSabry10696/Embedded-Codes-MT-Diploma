@@ -1,28 +1,40 @@
-/*
-* two switches increase/decrease 7 seg
-* 1st switch for 7 seg increament with no action when becomes 9
-* 2nd switch for 7 seg decreament with no action when becomes 0
-* switches is pull down
-* fcpu  --> 1 MHZ
-*/
+/**
+ * @file Challenge1.c
+ * @author Ahmed Sabry (ahmed.sabry10696@gmail.com)
+ * @brief two buttons increase/decrease 7 segment number 
+ * @version 0.1
+ * @date 2021-04-16
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ */
 #include <avr/io.h>
 #include <util/delay.h>
 
 int main(void)
 {
-	unsigned char num = 0;      /* to print it on 7 seg */
-	DDRA  = DDRA & (~(1<<PA0)); /* configure pin 0 of PORTA to be input pin */
-	DDRA  = DDRA & (~(1<<PA1)); /* configure pin 1 of PORTA to be input pin */
-	DDRD |= 0x0F; /* configure least 4 pins of PORTD as output pins */
+	 /* to print it on 7 seg */
+	unsigned char num = 0;     
+
+	/* configure pin 0 of PORTA to be input pin */
+	DDRA  = DDRA & (~(1<<PA0)); 
+
+	 /* configure pin 1 of PORTA to be input pin */
+	DDRA  = DDRA & (~(1<<PA1));
 	
+	/* configure least 4 pins of PORTD as output pins */
+	DDRD |= 0x0F; 
+
 	/* initialize the 7-segment to 0 */
 	PORTD &= ~((1<<PD0) | (1<<PD1) | (1<<PD2) | (1<<PD3));
 	
     while(1)
     {
-		if(PINA & (1<<PA0)) /* check if the first push button is pressed or not */
+		/* check if the first push button is pressed or not */
+		if(PINA & (1<<PA0)) 
 		{
-			_delay_ms(30);  /* debouncing delay */
+			/* debouncing delay */
+			_delay_ms(30); 
 
 			if(PINA & (1<<PA0))
 			{
@@ -32,12 +44,15 @@ int main(void)
 					PORTD = (PORTD & 0xF0) | (num & 0x0F); 
 				}
 			}
-			while(PINA & (1<<PA0)){}  /* wait until the switch is released */
+			/* wait until the switch is released */
+			while(PINA & (1<<PA0)){}  
 		}
 		
-		else if(PINA & (1<<PA1))  /* check if the second push button is pressed or not */
+		 /* check if the second push button is pressed or not */
+		else if(PINA & (1<<PA1)) 
 		{
-			_delay_ms(30);		/* debouncing delay */
+			/* debouncing delay */
+			_delay_ms(30);		
 
 			if(PINA & (1<<PA1))
 			{
@@ -47,7 +62,8 @@ int main(void)
 					PORTD = (PORTD & 0xF0) | (num & 0x0F);
 				}
 			}
-			while(PINA & (1<<PA1)){}  /* wait until switch released */
+			 /* wait until switch released */
+			while(PINA & (1<<PA1)){} 
 		}				       
     }
 }

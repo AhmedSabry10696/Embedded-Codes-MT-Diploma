@@ -1,11 +1,12 @@
-/*
-* three switches control DC Motor that connected to L293D chip
-* 1st switch clock wise rotote
-* 2nd switch anti clock wise rotate
-* 3rd switch stop motor
-* switches is pull down
-* fcpu  --> 1 MHZ
-*/
+/**
+ * @file Exercise5.c
+ * @author Ahmed Sabry (ahmed.sabry10696@gmail.com)
+ * @brief three pull down control DC motor connected to L293D driver
+ * @version 0.1
+ * @date 2021-04-16
+ * @copyright Copyright (c) 2021
+ * 
+ */
 #include <avr/io.h>
 int main(void)
 {
