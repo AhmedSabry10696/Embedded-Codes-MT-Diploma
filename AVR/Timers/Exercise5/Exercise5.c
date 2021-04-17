@@ -1,18 +1,34 @@
- /* Description: 
-  * Control the DC Motor direction using L293D H-bridge.
-  * Control The DC Motor Speed using PWM from MC. connect the
-  * PWM PIN of Timer0 OC0(PB3) to the enable of the Motor. 
-  * duty cycle 100% --> Maximum Speed 
-  * duty cycle 50%  --> Half Maximum Speed
-  * duty cycle 0%   --> Motor Stop
-  */
+ /**
+ * @file Exercise5.c
+ * @author Ahmed Sabry (ahmed.sabry10696@gmail.com)
+ * @brief Control the DC Motor direction and speed using L293D H-bridge.
+ *		  PWM PIN of Timer0 OC0(PB3) to the enable of the Motor. 
+ * 		  duty cycle 100% --> Maximum Speed 
+ * 		  duty cycle 50%  --> Half Maximum Speed
+ *		  duty cycle 0%   --> Motor Stop
+ * @version 0.1
+ * @date 2021-04-17
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ */
 #include <avr/io.h>
 
+/**
+ * @brief PWM initialization
+ * 
+ * @param set_duty_cycle 
+ */
 void PWM_Timer0_Init(unsigned char set_duty_cycle)
 {	
-	TCNT0 = 0; /* initial timer value */
-	OCR0  = set_duty_cycle;  /* compare value */
-	DDRB  = DDRB | (1<<PB3); /* set OC0 as output pin --> pin where the PWM signal is generated from MC */
+	/* initial timer value */
+	TCNT0 = 0; 
+
+	/* compare value */
+	OCR0  = set_duty_cycle; 
+
+	/* set OC0 as output pin --> pin where the PWM signal is generated from MC */
+	DDRB  = DDRB | (1<<PB3); 
 	
 	/* Configure timer control register
 	 * 1. Fast PWM mode FOC0=0
@@ -25,7 +41,8 @@ void PWM_Timer0_Init(unsigned char set_duty_cycle)
 
 void main(void)
 { 
-	PWM_Timer0_Init(128);  /* generate duty cycle 50% to get half motor speed */
+	/* generate duty cycle 50% to get half motor speed */
+	PWM_Timer0_Init(128);  
 	
 	/* 3 pins input for buttons */
 	DDRA = DDRA & (~(1<<PA0)); /* configure pin 0 of PORTA as input pin */

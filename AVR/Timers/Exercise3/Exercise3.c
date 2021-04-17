@@ -1,21 +1,31 @@
-/*
-* timer 0 compare mode to generate 2 KHZ clock
-* Duty cycle 50%  |--|__|--|__|
-* FCPU --> 1 MHZ
-* no prescaler
-*/
+/**
+ * @file Exercise3.c
+ * @author Ahmed Sabry (ahmed.sabry10696@gmail.com)
+ * @brief timer 0 compare mode to generate 2 KHZ clock
+		  Duty cycle 50%  |--|__|--|__| , FCPU --> 1 MHZ, no prescaler
+ * @version 0.1
+ * @date 2021-04-17
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ */
 #include <avr/io.h>
 
-/*
-* T for out clock = 1/2 KHZ = 500 us
-* so half of T = 250 us (50% duty cycle)
-* T for timer = 1/1 MHZ = 1 us 
-*/
+/**
+ * @brief T for out clock = 1/2 KHZ = 500 us
+ 		  so half of T = 250 us (50% duty cycle)
+		  T for timer = 1/1 MHZ = 1 us 
+ */
 void Timer0_CTC_Square_Wave_Init(void)
 {
-	TCNT0 = 0; /* initial value 0 */
-	OCR0 = 250; /* compare value */
-	DDRB = DDRB | (1<<PB3); /* OC0 Pin as output pin */
+	/* timer initial value 0 */
+	TCNT0 = 0; 
+
+	/* compare value */
+	OCR0 = 250;
+
+	/* OC0 Pin as output pin */
+	DDRB = DDRB | (1<<PB3); 
 
 	/* Configure timer control register 
 	 * 1. Non PWM mode FOC0 =1

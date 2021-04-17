@@ -1,21 +1,34 @@
-/*
-* confugire timer 0 to generate 4 KHZ clock
-* duty cycle = 50 %
-* F_CPU = 8 Mhz
-* TPWM = 1/ 4 KHZ = 250 us for 50 duty cycle 125 us
-
-* 125 us -----------> 128
-* N/ 8 MHZ ---------> 1
-* N = 8
-*/ 
+/**
+ * @file Challenge2.c
+ * @author Ahmed Sabry (ahmed.sabry10696@gmail.com)
+ * @brief confugire timer 0 to generate 4 KHZ clock, duty cycle = 50 %, F_CPU = 8 Mhz
+ * 		  TPWM = 1/ 4 KHZ = 250 us for 50 duty cycle 125 us
+ * 		  125 us -----------> 128
+ * 		  N/ 8 MHZ ---------> 1         so that --> N = 8
+ * @version 0.1
+ * @date 2021-04-17
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ */
 #include <avr/io.h>
 #include <util/delay.h>
 
+/**
+ * @brief PWM initialization
+ * 
+ * @param set_duty_cycle 
+ */
 void Timer0_PWM_Init(unsigned char set_duty_cycle)
 {	
-	TCNT0 = 0; /* Timer initial value */
-	OCR0  = set_duty_cycle;  /* compare value */
-	DDRB  = DDRB | (1<<PB3); /* set OC0 as output pin --> pin where the PWM signal is generated from MC */
+	/* Timer initial value */
+	TCNT0 = 0; 
+
+	/* compare value */
+	OCR0  = set_duty_cycle; 
+
+	/* set OC0 as output pin --> pin where the PWM signal is generated from MC */
+	DDRB  = DDRB | (1<<PB3); 
 
 	/* configure the timer
 	 * 1. Fast PWM mode FOC0=0
@@ -28,7 +41,8 @@ void Timer0_PWM_Init(unsigned char set_duty_cycle)
 
 int main(void)
 {
-    Timer0_PWM_Init(128); /* 50% duty cycle */
+	/* 50% duty cycle */
+    Timer0_PWM_Init(128); 
 	
 	while(1)
 	{

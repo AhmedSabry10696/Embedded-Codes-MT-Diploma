@@ -1,9 +1,14 @@
-/*
-* cofigure timer0 in compare mode to toggle led every half second
-* led is postive logic
-* FCPU --> 1 MHZ
-* prescaler -- > 1024
-*/
+/**
+ * @file Exercise2.c
+ * @author Ahmed Sabry (ahmed.sabry10696@gmail.com)
+ * @brief cofigure timer0 in compare mode to toggle led every half second
+		  led is postive logic, FCPU --> 1 MHZ, prescaler -- > 1024
+ * @version 0.1
+ * @date 2021-04-17
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ */
 #include <avr/io.h>
 #include <avr/interrupt.h>
 
@@ -12,27 +17,41 @@
 /* global variable */
 unsigned char g_tick = 0;
 
-/* Interrupt Service Routine for timer0 compare mode */
+/**
+ * @brief Construct a new ISR object
+ * 
+ */
 ISR(TIMER0_COMP_vect)
 {
 	g_tick++;
 	if(g_tick == NUMBER_OF_OVERFLOWS_PER_HALF_SECOND)
 	{
-		PORTC = PORTC ^ (1<<PC0); /* toggle led every 0.5 second */
-		g_tick = 0; /* clear the tick counter again to count a new 0.5 second */
+		/* toggle led every 0.5 second */
+		PORTC = PORTC ^ (1<<PC0); 
+		
+		/* clear the tick counter again to count a new 0.5 second */
+		g_tick = 0; 
 	}
 }
 
-/* For clock = 1Mhz and prescale F_CPU/1024 every count will take 1 ms
- * so we just need 250 counts to get 250ms every overflow. put initial timer counter=0  
- * and output compare register=250 0 --> 250 (250ms per overflow)
- * so we need timer to overflow 2 times to get a 0.5 second 
+/**
+ * @brief clock = 1Mhz and prescale F_CPU/1024 every count will take 1 ms
+ * so we just need 250 counts to get 250ms every overflow. 
+ * put initial timer counter=0 and output compare register=250 0 --> 250 (250ms per overflow)
+ * so we need timer to overflow 2 times to get a 0.5 second
+ * 
+ * @param tick compare value
  */
 void timer0_init_CTC_mode(unsigned char tick)
 {
-	TCNT0 = 0; /* timer initial value */
-	OCR0  = tick; /* compare value (250) */
-	TIMSK |= (1<<OCIE0); /* enable out compare interrupt */
+	/* timer initial value */
+	TCNT0 = 0;
+
+	/* compare value (250) */
+	OCR0  = tick; 
+
+	/* enable out compare interrupt */
+	TIMSK |= (1<<OCIE0); 
 
 	/* Configure timer0 control register 
 	 * 1. Non PWM mode FOC0 =1
@@ -45,11 +64,17 @@ void timer0_init_CTC_mode(unsigned char tick)
 
 void main(void)
 {
-	DDRC  |= (1<<PC0);   /* configure the led pin to be output pin */
-	PORTC &= ~(1<<PC0);  /* LED is off at the beginning(Positive Logic) */
+	/* configure the led pin to be output pin */
+	DDRC  |= (1<<PC0);   
+
+	/* LED is off at the beginning(Positive Logic) */
+	PORTC &= ~(1<<PC0);  
 	
-	SREG  |= (1<<7);     /* enable global interrupts in MC */
-	timer0_init_CTC_mode(250); /* start the timer and set compare value to 250 */
+	/* enable global interrupts in MC */
+	SREG  |= (1<<7);     
+
+	/* start the timer and set compare value to 250 */
+	timer0_init_CTC_mode(250); 
     
 	while(1)
     {			

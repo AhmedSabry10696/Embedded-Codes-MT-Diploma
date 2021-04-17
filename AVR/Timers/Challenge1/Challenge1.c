@@ -1,8 +1,14 @@
-/*
-* timer 0 normal mode to icreament 7 seg each 1 second and overflow after 9
-* prescaler --> 256
-* FCPU --> 8 MHZ
-*/
+/**
+ * @file Challenge1.c
+ * @author Ahmed Sabry (ahmed.sabry10696@gmail.com)
+ * @brief timer 0 normal mode to icreament 7 seg each 1 second and overflow after 9
+	      prescaler --> 256, FCPU --> 8 MHZ
+ * @version 0.1
+ * @date 2021-04-17
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ */
 #include <avr/io.h>
 #include <avr/interrupt.h>
 #include <util/delay.h>
@@ -12,14 +18,19 @@
 /* global variable */
 unsigned char tick=0;
 
-/* with clock = 8 Mhz and prescale F_CPU/256 every count will take 32 us
+/**
+ * @brief clock = 8 Mhz and prescale= 256 every count will take 32 us
  * so put initial timer counter=0  0 --> 255 (255 * 32us = 8.16 ms per overflow)
  * so we need timer to overflow 123 times to get a 1 second 
+ * 
  */
 void Timer_init_Normal_Mode(void)
 {
-	TCNT0 = 0;	/* timer initial value */
-	TIMSK = (1<<TOIE0); /* enable timer overflow interrupt */
+	/* timer initial value */
+	TCNT0 = 0;
+
+	/* enable timer overflow interrupt */
+	TIMSK = (1<<TOIE0); 
 	
 	/* configure the timer
 	 * 1. Non PWM mode FOC0=1
@@ -30,7 +41,10 @@ void Timer_init_Normal_Mode(void)
 	TCCR0 = (1<<FOC0) | (1<<CS02);
 }
 
-/* timer 0 ISR */ 
+/**
+ * @brief Construct a new ISR object
+ * 
+ */
 ISR(TIMER0_OVF_vect)
 {
 	tick++;
@@ -46,10 +60,17 @@ ISR(TIMER0_OVF_vect)
 
 void main(void)
 {
-	DDRC  = 0xFF;    /* Configure all pins in PORTC as output pins */
-	PORTC = 0;       /* Initialize the 7-seg display zero at the beginning */
-	SREG |= (1<<7);  /* Enable global interrupts in MC */
-	Timer_init_Normal_Mode(); /* start the timer */
+	/* Configure all pins in PORTC as output pins for 7 segment */
+	DDRC  = 0xFF;   
+
+	/* Initialize the 7-seg display zero at the beginning */
+	PORTC = 0;       
+
+	/* Enable global interrupts in MC */
+	SREG |= (1<<7);  
+
+	/* start the timer */
+	Timer_init_Normal_Mode(); 
 
     while(1)
     {			
