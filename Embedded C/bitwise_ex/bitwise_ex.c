@@ -1,33 +1,59 @@
+/**
+ * @file bitwise_ex.c
+ * @author Ahmed Sabry (ahmed.sabry10696@gmail.com)
+ * @brief common macros
+ * @version 0.1
+ * @date 2021-04-18
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ */
 #include <stdio.h>
-#include "common_macros.h" /* include my macros file */
+
+/* include my macros file */
+#include "common_macros.h" 
 
 int main()
 {
-	unsigned char var=0;   /* 8 bit variable */
-	SET_BIT(var,0);        /* set bit number 0 */
-	SET_BIT(var,1); 	   /* set bit number 1 */
-	SET_BIT(var,2);        /* set bit number 2 */
+	/* 8 bit variable */
+	unsigned char var=0;  
+
+	/* set bit number 0 */
+	SET_BIT(var,0);        
+
+	/* set bit number 1 */
+	SET_BIT(var,1); 	  
+
+	/* set bit number 2 */ 
+	SET_BIT(var,2);       
+	
 	printf("var=0x%x\n",var);
 
-	CLEAR_BIT(var,2);      /* clear bit number 2 */
+	/* clear bit number 2 */
+	CLEAR_BIT(var,2);      
 	printf("var=0x%x\n",var);
 
-	TOGGLE_BIT(var,2); 	   /* toggle bit number 2 */
+	/* toggle bit number 2 */
+	TOGGLE_BIT(var,2); 	   
 	printf("var=0x%x\n",var);
 
-	ROR(var,1); 		   /* rotate left one time */
+	/* rotate left one time */
+	ROR(var,1); 		   
 	printf("var=0x%x\n",var);
 
-	ROL(var,1); 		   /* rotate right one time */
+	/* rotate right one time */
+	ROL(var,1); 		   
 	printf("var=0x%x\n",var);
 
-	if(BIT_IS_SET(var,2))  /* check if bit number 2 is set */
+	/* check if bit number 2 is set */
+	if(BIT_IS_SET(var,2))  
 	{
 		CLEAR_BIT(var,2);
 		printf("var=0x%x\n",var);
 	}
 
-	if(BIT_IS_CLEAR(var,2)) /* check if bit number 2 is cleared */
+	/* check if bit number 2 is cleared */
+	if(BIT_IS_CLEAR(var,2)) 
 	{
 		SET_BIT(var,2);
 		printf("var=0x%x\n",var);

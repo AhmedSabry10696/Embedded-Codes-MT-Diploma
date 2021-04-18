@@ -1,21 +1,23 @@
+/**
+ * @file macro_ex3.c
+ * @author Ahmed Sabry (ahmed.sabry10696@gmail.com)
+ * @brief macros to calculate the check sum of transmitted buffer
+ * @version 0.1
+ * @date 2021-04-18
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ */
+
 #include <stdio.h>
 
 /* The maximum number of bytes in the message */
 #define MAX_SIZE 1024
 
-/* Description:
- * 	A Macro used to calculate the check sum of the transmitted buffer of size MAX_SIZE.
- *  after the receiver receive the transmitted data it checks if the sum
- *  of the data at the receiver equals to the sum of the transmitted data
- *  at the transmitter. if they are equal then no errors happened during transmission
- *  and "Transmission Success" will be displayed else if there is any error
- *  "Transmission Fails" will be displayed
- */
-
 #define RECEIVER(data_buffer,Size)\
 {\
-	unsigned short transmitted_sum=0;\
-	unsigned short received_sum=0;\
+	unsigned short transmitted_sum = 0;\
+	unsigned short received_sum = 0;\
 	int loop_idx;\
 	\
 	/* calculate the check sum at the receiver */ \
@@ -41,7 +43,7 @@
 int main()
 {
 	int loop_idx;
-	unsigned short check_sum=0;
+	unsigned short check_sum = 0;
 	unsigned char data[MAX_SIZE];
 
     /* fill the buffer with ones except the last two bytes will include the sum of all data */
@@ -52,7 +54,10 @@ int main()
 	}
 
 	/* save the sum of all data in the last 2 bytes of the buffer */
-	data[MAX_SIZE-2]=(unsigned char)check_sum; //save the least 8-bits in data[MAX_SIZE-2]
+	
+	//save the least 8-bits in data[MAX_SIZE-2]
+	data[MAX_SIZE-2]=(unsigned char)check_sum; 
+	
 	/* save the most 8-bits in data[MAX_SIZE-1] */
 	data[MAX_SIZE-1]=(unsigned char)(check_sum>>(sizeof(data[MAX_SIZE-1])*8)); 
 	printf("check_sum = %x \t data[MAX_SIZE-2] = %x \t data[MAX_SIZE-1] = %x\n",check_sum,data[MAX_SIZE-2],data[MAX_SIZE-1]);

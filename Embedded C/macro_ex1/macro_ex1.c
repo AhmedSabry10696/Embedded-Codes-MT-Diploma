@@ -1,13 +1,17 @@
-#include <stdio.h>
-
-/* Description :
- * MUL Macro it should be like that
- * #define MUL(X,Y) ( (X) * (Y) )
- * to avoid any errors
+/**
+ * @file macro_ex1.c
+ * @author Ahmed Sabry (ahmed.sabry10696@gmail.com)
+ * @brief Macros to multiply two numbers
+ * @version 0.1
+ * @date 2021-04-18
+ * 
+ * @copyright Copyright (c) 2021
+ * 
  */
 
-#define MUL(X,Y) (X*Y)
+#include <stdio.h>
 
+#define MUL(X,Y) (X*Y)
 #define MUL_MODIFIED(X,Y) ((X) * (Y))
 
 int main()
@@ -18,8 +22,9 @@ int main()
     c = MUL(a,b);
     printf("c=%d\n",c);
 
-    c = MUL(a+1,b+2); /* a+1*b+2 */
-    /* error in macro because there is no ( ) around each argument ( a+1 * b+2 )*/
+    /* a+1*b+2 */
+    c = MUL(a+1,b+2);
+    /* logical error in macro because there is no ( ) around each argument */
     printf("c=%d\n",c);
 
     c = MUL_MODIFIED(a+1,b+2);

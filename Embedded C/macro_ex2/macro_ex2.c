@@ -1,7 +1,19 @@
+/**
+ * @file macro_ex2.c
+ * @author Ahmed Sabry (ahmed.sabry10696@gmail.com)
+ * @brief macros to swap two numbers
+ * @version 0.1
+ * @date 2021-04-18
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ */
+
 #include <stdio.h>
 
-/* Description :
- * Swap Marco to swap the values of two numbers
+/**
+ * @brief macros to swap two numbers
+ * 
  */
 #define SWAP(X,Y)\
 {\
@@ -12,8 +24,9 @@
     Y = temp;\
 }
 
-/* Description :
- * MAX Marco to print the maximum value of two numbers
+/**
+ * @brief macros to get the max number of two numbers
+ * 
  */
 #define MAX(X,Y){\
     if(X>Y)\
@@ -30,6 +43,7 @@ int main()
 {
     int a= 10,b= 5;
     printf("Values before swapping : a=%d\t b=%d\n",a,b);
+    
     /* swap the two numbers */
     SWAP(a,b);
     printf("Values after swapping  : a=%d\t b=%d\n",a,b);

@@ -1,6 +1,13 @@
-/* to ensure that .h file inlcude once, we can 
- *  use #pragma once at beginning of .h file 
-*/
+/**
+ * @file common_macros.h
+ * @author Ahmed Sabry (ahmed.sabry10696@gmail.com)
+ * @brief header files
+ * @version 0.1
+ * @date 2021-04-18
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ */
 #ifndef COMMON_MACROS 
 #define COMMON_MACROS
 
