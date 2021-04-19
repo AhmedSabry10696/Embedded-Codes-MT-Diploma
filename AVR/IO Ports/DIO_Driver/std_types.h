@@ -23,6 +23,25 @@ typedef signed long sint32;
 typedef float  f32;
 typedef double f64;
 
-typedef enum {E_OK, E_NOK, PENDING} ERROR_t;
+typedef enum
+{
+    E_OK, E_NOK, PENDING
+} ERROR_t;
+
+typedef union
+{
+	unsigned char Data;
+	struct
+	{
+		unsigned char BIT0:1;
+		unsigned char BIT1:1;
+		unsigned char BIT2:1;
+		unsigned char BIT3:1;
+		unsigned char BIT4:1;
+		unsigned char BIT5:1;
+		unsigned char BIT6:1;
+		unsigned char BIT7:1;
+	}BITS; /* share the same values that is in Data var */
+}Reg_8bit;
 
 #endif /* STD_TYPE_H_ */
