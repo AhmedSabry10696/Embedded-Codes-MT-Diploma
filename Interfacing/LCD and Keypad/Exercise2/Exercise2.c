@@ -1,28 +1,35 @@
-/*
- * Exercise2.c
- *
- * Created: 4/3/2014 6:00:08 PM
- *  Author: Ahmed Sabry
- */ 
-
+/**
+ * @file Exercise2.c
+ * @author Ahmed Sabry (ahmed.sabry10696@gmail.com)
+ * @brief LCD example
+ * @version 0.1
+ * @date 2021-04-20
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ */
 #include "lcd.h"
 
 int main(void)
 {
-	LCD_init(); /* initialize LCD */
+	/* initialize LCD */
+	LCD_init();
 	LCD_displayStringRowColumn(0,2,"My LCD Driver");
 	LCD_displayStringRowColumn(1,3,"Embedded WS");
 	
-	_delay_ms(4000); /* wait four seconds */
-	LCD_clearScreen(); /* clear the LCD display */
+	/* wait four seconds */
+	_delay_ms(4000); 
+
+	/* clear the LCD display */
+	LCD_clearScreen();
 	
 	LCD_displayString("Interf. Course");
 	LCD_displayStringRowColumn(1,5,"Group ");
 	LCD_intgerToString(15);
 	
-    while(1)
+    for(;;)
     {
-		/* Note: we write the code before while(1) because we want to execute it only once */
+		/* do nothing */
     }
 	
 }

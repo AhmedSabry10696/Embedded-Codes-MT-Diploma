@@ -1,5 +1,5 @@
 /**
- * @file micro_config.h
+ * @file MICRO_CONFIG.h
  * @author Ahmed Sabry (ahmed.sabry10696@gmail.com)
  * @brief microcontroller configurations
  * @version 0.1

@@ -13,7 +13,7 @@
 #define KEYPAD_H_
 
 #include "STD_TYPES.h"
-#include "micro_config.h"
+#include "MICRO_CONFIG.h"
 #include "COMMON_MACROS.h"
 
 /* number of rows and columns used in keypad */
