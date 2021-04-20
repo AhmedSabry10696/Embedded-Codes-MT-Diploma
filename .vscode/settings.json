@@ -2,6 +2,7 @@
     "files.associations": {
         "io.h": "c",
         "interrupt.h": "c",
-        "lcd.h": "c"
+        "lcd.h": "c",
+        "std_types.h": "c"
     }
 }
