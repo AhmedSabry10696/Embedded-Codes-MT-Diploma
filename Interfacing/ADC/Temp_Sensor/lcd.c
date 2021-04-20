@@ -8,6 +8,7 @@
  * @copyright Copyright (c) 2021
  * 
  */
+
 #include "lcd.h"
 
 void LCD_init(void)
