@@ -1,21 +1,32 @@
-/*
- * Exercise1.c
- *
- * Created: 1/23/2014 9:50:20 PM
- *  Author: Ahmed Sabry
- */ 
+/**
+ * @file Exercise1.c
+ * @author Ahmed Sabry (ahmed.sabry10696@gmail.com)
+ * @brief display pressed key from keypad on 7 segment
+ * @version 0.1
+ * @date 2021-04-20
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ */
 
 #include "keypad.h"
 
 int main(void)
 {
 	uint8 key;
-	DDRC  |= 0x0F; /* 7-segment pins as output pins */
-	PORTC  = 0;    /* 7-segment displays Zero at the beginning */
+
+	/* 7-segment pins as output pins */
+	DDRC  |= 0x0F; 
+
+	/* 7-segment displays Zero at the beginning */
+	PORTC  = 0;    
+
     while(1)
     {
-        key = KeyPad_getPressedKey(); /* get the pressed button from keypad */
-	    if((key >= 0) && (key <= 9))
+		/* get the pressed button from keypad */
+        key = KeyPad_getPressedKey(); 
+	    
+		if((key >= 0) && (key <= 9))
 		{ 
 			 PORTC = key;
 		}						

@@ -1,5 +1,5 @@
 /**
- * @file COMMOM_MACROS.h
+ * @file COMMON_MACROS.h
  * @author Ahmed Sabry (ahmed.sabry10696@gmail.com)
  * @brief common macros file
  * @version 0.1
