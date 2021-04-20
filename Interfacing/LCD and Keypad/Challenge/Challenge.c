@@ -1,16 +1,20 @@
-/*
- * Challenge.c
- *
- * Created: 4/2/2014 7:42:04 PM
- * Author: Ahmed Sabry
- */ 
+/**
+ * @file Challenge.c
+ * @author Ahmed Sabry (ahmed.sabry10696@gmail.com)
+ * @brief Display pressed key from keypad to LCD screen
+ * @version 0.1
+ * @date 2021-04-20
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ */
 
 #include "lcd.h"
 #include "keypad.h"
 
 int main(void)
 {
-	unsigned char key;
+	uint8 key;
 	LCD_init();
 	LCD_displayStringRowColumn(0,0,"Challenge");
 	LCD_displayStringRowColumn(1,0,"Keypad 4x4");
@@ -18,17 +22,20 @@ int main(void)
 	LCD_goToRowColumn(3,0);
 	
     while(1)
-    {
-		/* if any switch pressed for more than 500 ms it counts more than one press */  
-		key = KeyPad_getPressedKey(); /* get the pressed key number */
+    {		
+		/* get the pressed key */
+		key = KeyPad_getPressedKey(); 
 		if((key <= 9) && (key >= 0))
 		{
-			LCD_intgerToString(key); /* display the pressed keypad switch */
+			/* display the pressed keypad switch */
+			LCD_intgerToString(key); 
 		}
 		else
 		{
-			LCD_displayCharacter(key); /* display the pressed keypad switch */ 
+			/* display the pressed keypad switch */ 
+			LCD_displayCharacter(key); 
 		}
-		_delay_ms(500); /* Press time */
+		/* Press time */
+		_delay_ms(500); 
     }
 }
