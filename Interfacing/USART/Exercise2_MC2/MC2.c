@@ -1,9 +1,13 @@
-/*
- * MC2.c
- *
- * Created: 9/19/2014 10:25:58 PM
- *  Author: Ahmed Sabry
- */ 
+/**
+ * @file MC2.c
+ * @author Ahmed Sabry (ahmed.sabry10696@gmail.com)
+ * @brief uart example
+ * @version 0.1
+ * @date 2021-04-21
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ */
 
 #include "uart.h"
 
@@ -11,14 +15,20 @@ int main(void)
 {
 	uint8 key_num;
 	
-	DDRC  = 0xFF; /* configure PORTC as output port */
-	PORTC = 0;    /* All leds are off */
+	/* configure PORTC as output port */
+	DDRC  = 0xFF;
+
+	/* All leds are off */ 
+	PORTC = 0;  
 	
 	UART_init();
 	
-    while(1)
+    for(;;)
     {
-        key_num = UART_recieveByte(); /* Receive LED number that required to be ON */
+		/* Receive LED number that required to be ON */
+        key_num = UART_recieveByte(); 
+
+		/* turn led on */
 		PORTC = (1<<key_num); 
     }
 }
