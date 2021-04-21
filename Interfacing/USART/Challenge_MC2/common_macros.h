@@ -1,10 +1,13 @@
-/*
- * common_macros.h
- *
- * Created: 4/2/2014 7:47:21 PM
- * Author:Ahmed Sabry
- */ 
-
+/**
+ * @file COMMON_MACROS.h
+ * @author Ahmed Sabry (ahmed.sabry10696@gmail.com)
+ * @brief common macros file
+ * @version 0.1
+ * @date 2021-04-15
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ */
 #ifndef COMMON_MACROS
 #define COMMON_MACROS
 
@@ -28,5 +31,8 @@
 
 /* Check if a specific bit is cleared in any register and return true if yes */
 #define BIT_IS_CLEAR(REG,BIT) ( !(REG & (1<<BIT)) )
+
+/* Get specific bit in any register */
+#define GET_BIT(REG,BIT) ( (REG>>BIT) & 0x01 )
 
 #endif

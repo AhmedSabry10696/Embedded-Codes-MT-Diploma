@@ -1,28 +1,40 @@
-/*
- * MC2.c
- *
- * Created: 25/04/2014 11:12:30 
- *  Author: Ahmed Sabry
- */ 
-
+/**
+ * @file MC2.c
+ * @author Ahmed Sabry (ahmed.sabry10696@gmail.com)
+ * @brief receive number from uart and display it on LCD
+ * @version 0.1
+ * @date 2021-04-21
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ */
 #include "uart.h"
 #include "lcd.h"
 
 int main(void)
 {
 	uint8 key;
+
+	/* uart initialization */
 	UART_init();
+
+	/* lcd initialization */
 	LCD_init();
-    while(1)
+    
+	for(;;)
     {
-		key = UART_recieveByte();	/* receive the pressed key from uart */
+		/* receive the pressed key from uart */
+		key = UART_recieveByte();	
+
 		if( (key >= 0) && (key <= 9) )
 		{
-			LCD_intgerToString(key); /* display the pressed keypad switch */	
+			/* display the pressed keypad switch */
+			LCD_intgerToString(key); 	
 		}
 		else
 		{
-			LCD_displayCharacter(key); /* display the pressed keypad switch */	
+			/* display the pressed keypad switch */
+			LCD_displayCharacter(key); 	
 		}		 
     }
 }
