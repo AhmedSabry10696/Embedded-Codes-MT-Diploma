@@ -1,9 +1,13 @@
-/*
- * Exercise1.c
- *
- * Created: 4/10/2014 9:23:41 PM
- * Author: Ahmed Sabry
- */ 
+/**
+ * @file Exercise1.c
+ * @author Ahmed Sabry (ahmed.sabry10696@gmail.com)
+ * @brief uart example
+ * @version 0.1
+ * @date 2021-04-21
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ */
 
 #include "uart.h"
 
@@ -12,12 +16,19 @@ int main(void)
 	uint8 Str[20];
 	uint8 data;
 	UART_init();
-    while(1)
+
+	for(;;)
     { 
-		/* data = UART_recieveByte(); // Receive Byte from Terminal1 */
-		/* UART_sendByte(data);  // Resend the received byte to Terminal2 */
+		/* Receive Byte from Terminal1 */ 
+		/* data = UART_recieveByte(); */
+
+		/* Resend the received byte to Terminal */
+		/* UART_sendByte(data); */
 		
-		UART_receiveString(Str); /* Receive String from Terminal */
-		UART_sendString(Str); /* Resend the string to Terminal2 */
+		/* Receive String from Terminal */
+		UART_receiveString(Str);
+
+		/* Resend the string to Terminal */ 
+		UART_sendString(Str); 
     }
 }
