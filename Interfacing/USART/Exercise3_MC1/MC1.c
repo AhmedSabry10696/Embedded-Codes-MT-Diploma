@@ -1,9 +1,13 @@
-/*
- * MC1.c
- *
- * Created: 4/10/2014 11:21:37 PM
- * Author: Ahmed Sabry
- */ 
+/**
+ * @file MC1.c
+ * @author Ahmed Sabry (ahmed.sabry10696@gmail.com)
+ * @brief uart example
+ * @version 0.1
+ * @date 2021-04-21
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ */
 
 #include "uart.h"
 
@@ -11,12 +15,17 @@
 
 int main(void)
 {
-	UART_init(); /* initialize UART */
-	while(UART_recieveByte() != M2_READY){} /* wait until MC2 is ready */
-	UART_sendString("I am Micro1#");        /* send the required string to MC2 */
+    /* initialize UART */
+	UART_init();
+
+    /* wait until MC2 is ready */
+	while(UART_recieveByte() != M2_READY){} 
 	
-    while(1)
+    /* send the required string to MC2 */
+    UART_sendString("I am Micro1#");       
+	
+    for(;;)
     {
-		 
+		 /* do nothing */
     }
 }
