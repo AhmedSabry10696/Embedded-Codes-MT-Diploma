@@ -1,20 +1,27 @@
-/*
- * MC1.c
- *
- *  Created on: Sep 18, 2015
- *  Author: Ahmed Sabry
+/**
+ * @file MC1.c
+ * @author Ahmed Sabry (ahmed.sabry10696@gmail.com) 
+ * @brief spi example 2
+ * @version 0.1
+ * @date 2021-04-22
+ * 
+ * @copyright Copyright (c) 2021
+ * 
  */
 
 #include "spi.h"
 
 int main(void)
 {
-	SPI_initMaster(); /* Master Initialization */
-	_delay_ms(50); /* delay until MC2 finish its initialization task */
+    /* Master Initialization */
+	SPI_initMaster();
+
+    /* delay until MC2 finish its initialization task */ 
+	_delay_ms(50); 
 	
     SPI_SendString("I am Micro1#");
     
-    while(1)
+    for(;;)
     {
         /* do nothing */
     }
