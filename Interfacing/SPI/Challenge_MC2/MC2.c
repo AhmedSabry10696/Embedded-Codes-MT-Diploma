@@ -1,8 +1,12 @@
-/*
- * MC2.c
- *
- *  Created on: Sep 18, 2015
- *  Author: Ahmed Sabry
+/**
+ * @file MC2.c
+ * @author Ahmed Sabry (ahmed.sabry10696@gmail.com)
+ * @brief spi challenge
+ * @version 0.1
+ * @date 2021-04-22
+ * 
+ * @copyright Copyright (c) 2021
+ * 
  */
 
 #include "spi.h"
@@ -11,16 +15,22 @@
 int main(void)
 {
 	uint8 key;
-	LCD_init();
-	SPI_initSlave(); /* initialize salve MC */
-    
-	while(1)
-    {
-		key = SPI_recieveByte();  /* receive the pressed key from spi */
 
+	/* lcd initialization */
+	LCD_init();
+
+	/* initialize salve MC */
+	SPI_initSlave();
+    
+	for(;;)
+    {
+		/* receive the pressed key from spi */
+		key = SPI_recieveByte();  
+
+		/* check if the key is digit */
 		if((key>=0) && (key<=9))
 		{
-			LCD_intgerToString(key); /* display the pressed key */
+			LCD_intgerToString(key); 
 		}
 		else
 		{

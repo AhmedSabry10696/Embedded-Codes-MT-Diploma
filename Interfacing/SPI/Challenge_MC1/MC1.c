@@ -1,8 +1,12 @@
-/*
- * MC1.c
- *
- *  Created on: Sep 18, 2015
- *  Author: Ahmed Sabry
+/**
+ * @file MC1.c
+ * @author Ahmed Sabry (ahmed.sabry10696@gmail.com)
+ * @brief spi challenge
+ * @version 0.1
+ * @date 2021-04-22
+ * 
+ * @copyright Copyright (c) 2021
+ * 
  */
 
 #include "keypad.h"
@@ -11,14 +15,20 @@
 int main(void)
 {
 	uint8 key;
-	SPI_initMaster(); /* intitialize Master MC */
+
+	/* intitialize Master MC */
+	SPI_initMaster(); 
     
-	while(1)
+	for(;;)
     {
-		key = KeyPad_getPressedKey(); /* get the pressed key */
-		SPI_sendByte(key); /* send the pressed key to the second MC using spi */
+		/* get the pressed key */
+		key = KeyPad_getPressedKey();
+
+		/* send the pressed key to the second MC using spi */ 
+		SPI_sendByte(key); 
 		
-		_delay_ms(500); /* press time is 500msec */
+		/* press time is 500msec */
+		_delay_ms(500); 
     }
 }
 
