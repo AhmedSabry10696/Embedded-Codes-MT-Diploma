@@ -1,9 +1,14 @@
-/*
- * I2C.c
- *
- * Created: 3/12/2014 12:05:38 PM
- * Author: Ahmed Sabry
- */ 
+/**
+ * @file i2c.c
+ * @author Ahmed Sabry (ahmed.sabry10696@gmail.com)
+ * @brief i2c driver source file
+ * @version 0.1
+ * @date 2021-04-21
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ */
+
 #include "i2c.h"
 
 void TWI_Init(void)
@@ -15,9 +20,12 @@ void TWI_Init(void)
 	
     /* Two Wire Bus address my address if any master device want to call me: 0x01 
      * (used in case this MC is a slave device) General Call Recognition: Off */
-    TWAR = 0b00000010; /* my address = 0x01 */
+
+    /* my address = 0x01 */
+    TWAR = 0b00000010; 
 	
-    TWCR = (1<<TWEN); /* enable TWI */
+    /* enable TWI */
+    TWCR = (1<<TWEN); 
 }
 
 void TWI_Start(void)
@@ -47,11 +55,13 @@ void TWI_Write(uint8 data)
 {
     /* Put data On TWI data Register */
     TWDR = data;
+
     /* 
 	 * Clear the TWINT flag before sending the data TWINT=1
 	 * Enable TWI Module TWEN=1 
 	 */ 
     TWCR = (1 << TWINT) | (1 << TWEN);
+
     /* Wait for TWINT flag set in TWCR Register(data is send successfully) */
     while(BIT_IS_CLEAR(TWCR,TWINT));
 }
@@ -64,8 +74,10 @@ uint8 TWI_Read_With_ACK(void)
 	 * Enable TWI Module TWEN = 1 
 	 */ 
     TWCR = (1 << TWINT) | (1 << TWEN) | (1 << TWEA);
+
     /* Wait for TWINT flag set in TWCR Register (data received successfully) */
     while(BIT_IS_CLEAR(TWCR,TWINT));
+  
     /* Read Data */
     return TWDR;
 }
@@ -77,8 +89,10 @@ uint8 TWI_Read_With_NACK(void)
 	 * Enable TWI Module TWEN=1 
 	 */
     TWCR = (1 << TWINT) | (1 << TWEN);
+   
     /* Wait for TWINT flag set in TWCR Register (data received successfully) */
     while(BIT_IS_CLEAR(TWCR,TWINT));
+    
     /* Read Data */
     return TWDR;
 }
@@ -86,7 +100,9 @@ uint8 TWI_Read_With_NACK(void)
 uint8 TWI_Get_Status(void)
 {
     uint8 status;
+    
     /* masking to eliminate first 3 bits and get the last 5 bits (status bits) */
     status = TWSR & 0xF8;
+    
     return status;
 }

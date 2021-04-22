@@ -1,14 +1,19 @@
-/*
- * External_EEPROM.c
- *
- * Created: 3/12/2014 12:06:35 PM
- * Author: Ahmed Sabry
- */ 
+/**
+ * @file External_EEPROM.c
+ * @author Ahmed Sabry (ahmed.sabry10696@gmail.com)
+ * @brief External eeprom driver source file
+ * @version 0.1
+ * @date 2021-04-21
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ */
 #include "External_EEPROM.h"
 
 void EEPROM_Init(void)
 {
-	TWI_Init(); /* just initialize the TWI module inside the MC */
+    /* just initialize the TWI module inside the MC */
+	TWI_Init(); 
 }
 
 uint8 EEPROM_Write_Byte(uint16 u16addr, uint8 u8data)

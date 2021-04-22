@@ -1,17 +1,18 @@
-/*
- * micro_config.h
- *
- * Created: 1/3/2015 11:28:01 PM
- *  Author: Ahmed Sabry
- */ 
-
-
+/**
+ * @file MICRO_CONFIG.h
+ * @author Ahmed Sabry (ahmed.sabry10696@gmail.com)
+ * @brief microcontroller configurations
+ * @version 0.1
+ * @date 2021-04-20
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ */
 #ifndef MICRO_CONFIG_H_
 #define MICRO_CONFIG_H_
 
-
 #ifndef F_CPU
-#define F_CPU 8000000UL /* 8 MHz Clock frequency */
+#define F_CPU 8000000UL
 #endif  
 
 #include <avr/io.h>
