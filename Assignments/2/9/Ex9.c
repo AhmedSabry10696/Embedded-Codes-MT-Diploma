@@ -1,17 +1,24 @@
-/*
- * Ex9.c
- * linear search function to find specific number in array
- * Created on: Jul 20, 2015
- * Author: Ahmed Sabry
+/**
+ * @file Ex9.c
+ * @author Ahmed Sabry (ahmed.sabry10696@gmail.com)
+ * @brief  linear search function to find specific number in array
+ * @version 0.1
+ * @date 2021-04-23
+ * 
+ * @copyright Copyright (c) 2021
+ * 
  */
 
 #include <stdio.h>
 
-/*
- * Description:
- * Program to find a certain number in array using Linear search algorithm
+/**
+ * @brief find a certain number in array using Linear search algorithm
+ * 
+ * @param array array 
+ * @param element element to search about
+ * @param n array size
+ * @return int 
  */
-
 int Linear_Search(const int array[],int element,int n); 
 
 int main( void )
@@ -22,41 +29,46 @@ int main( void )
     int location;
     int element;
 
-    printf("Enter the required array: \n");
     /* take array elements from user */
+    printf("Enter the required array: \n");
+   
     for(i=0;i<size;i++)
     {
         scanf("%d",&array[i]);
     }
 
-    printf("Enter element for search: ");
     /* take element to search about it */
+    printf("Enter element for search: ");
     scanf("%d",&element);
 
     /* call the funciton to find its location */
     location = Linear_Search(array,element,size);
+    
     /* check the result */
     if(location == -1)
     {
         printf("\nElement not found\n");
     }
+
     else
     {
         printf("\nThe element at the location: %d",location);
     }
+
     return 0;
 
 }
 
 int Linear_Search(const int array[],int element,int n)
-{
-    int i;
-    for(i=0;i<n;i++)
+{    
+    for(int i=0; i<n; i++)
     {
         if(element == array[i])
-            return (i); /* index of the element if founded */
+            /* index of the element if founded */
+            return (i); 
     }
-    return -1; /* element not found */
-}
+
+    /* element not found */
+    return -1; 
 
 

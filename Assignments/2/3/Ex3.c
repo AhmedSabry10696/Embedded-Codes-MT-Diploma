@@ -1,12 +1,22 @@
-/*
- * Ex3.c
- * function to swap two integer values
- * Created on: Jul 19, 2015
- * Author: Ahmed Sabry
+/**
+ * @file Ex3.c
+ * @author Ahmed Sabry (ahmed.sabry10696@gmail.com)
+ * @brief  program to swap two numbers
+ * @version 0.1
+ * @date 2021-04-23
+ * 
+ * @copyright Copyright (c) 2021
+ * 
  */
 
 #include <stdio.h>
 
+/**
+ * @brief swap two numbers
+ * 
+ * @param ptr1 address of first number
+ * @param ptr2 address of second number
+ */
 void swap(int *ptr1, int *ptr2)
 {
 	int temp;

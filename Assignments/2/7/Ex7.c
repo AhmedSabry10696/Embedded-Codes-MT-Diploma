@@ -1,8 +1,12 @@
-/*
- * Ex7.c
- * fuction that takes string and return true if char adistinct and false if repeated 
- * Created on: Jul 19, 2015
- * Author: Ahmed Sabry
+/**
+ * @file Ex7.c
+ * @author Ahmed Sabry (ahmed.sabry10696@gmail.com)
+ * @brief  program takes string and return true if char adistinct and false if repeated
+ * @version 0.1
+ * @date 2021-04-23
+ * 
+ * @copyright Copyright (c) 2021
+ * 
  */
 
 #include <stdio.h>
@@ -10,22 +14,37 @@
 #define TRUE  1
 #define FALSE 0
 
+/**
+ * @brief find if string is distinct or not
+ * 
+ * @param s string to check
+ * @return int result it may br true or false
+ */
 int check_distinct(char s[])
 {
-	int i=0,j=0;
+	int i = 0, j = 0;
 	int results = TRUE;
 
 	/* the idea is compare each element with all the following array elements */
-	while(s[i] != '\0') /* loop until the end of the string */
+
+	/* loop until the end of the string */
+	while(s[i] != '\0') 
 	{
-		j = i+1; /* start compare from the next character */
-		while(s[j] != '\0') /* loop from the next char till the end of string */
+		/* start compare from the next character */
+		j = i+1; 
+
+		/* loop from the next char till the end of string */
+		while(s[j] != '\0') 
 		{
-			if(s[i] == s[j]) /* check if the first element matches any of the next char */
+			/* check if the first element matches any of the next char */
+			if(s[i] == s[j])
 			{
-				results = FALSE; /* this character is not distinct */
+				/* this character is not distinct */
+				results = FALSE; 
 			}
-			j++; /* to compare with the next character */
+
+			/* to compare with the next character */
+			j++; 
 		}
 		i++;
 	}
@@ -36,10 +55,12 @@ int main(void)
 {
 	char str[20];
 	int results;
-	printf("Please enter ther required sting message : ");
+
 	/* get string from the user */
+	printf("Please enter ther required sting message : ");
 	gets(str);
 	printf("\n");
+	
 	/* call the function */
 	results = check_distinct(str);
 	

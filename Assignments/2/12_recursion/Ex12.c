@@ -1,14 +1,22 @@
-/*
- * Ex12.c
- * Fibonacci numbers each numbers equal to the sum of the two previous numbers
- * like 1,1,2,3,5,8,13,..
- * write a program to find nth term in this series using recursion
- * Created on: Jul 20, 2015
- * Author: Ahmed Sabry
+/**
+ * @file Ex12.c
+ * @author Ahmed Sabry (ahmed.sabry10696@gmail.com)
+ * @brief program to find nth number in Fibonacci series like 1,1,2,3,5,8,13,.
+ * @version 0.1
+ * @date 2021-04-23
+ * 
+ * @copyright Copyright (c) 2021
+ * 
  */
 
 #include <stdio.h>
 
+/**
+ * @brief get nth element in this series
+ * 
+ * @param n index to find its value
+ * @return long 
+ */
 long fibanacci(long n)
 {
 	if(n==0 || n==1)
@@ -24,12 +32,13 @@ long fibanacci(long n)
 int main(void)
 {
 	long num_index,num;
-	printf("Please enter the element index : ");
+
 	/* take the nth term to calculate it */
+	printf("Please enter the element index : ");
 	scanf("%ld",&num_index);
 	
-	num = fibanacci(num_index);
-	/* print the result */ 
+	/* print the result */
+	num = fibanacci(num_index); 
 	printf("\nThe %ldth term is:%ld",num_index,num);
 	
 	return 0;

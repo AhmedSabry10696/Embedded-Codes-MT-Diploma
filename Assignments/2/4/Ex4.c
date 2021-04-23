@@ -1,20 +1,27 @@
-/*
- * Ex4.c
- * function to print binary of integer and number of ones and zeros 
- * Created on: Jul 19, 2015
- * Author: Ahmed Sabry 
+/**
+ * @file Ex4.c
+ * @author Ahmed Sabry (ahmed.sabry10696@gmail.com)
+ * @brief  program prints binary of integer and number of ones and zeros
+ * @version 0.1
+ * @date 2021-04-23
+ * 
+ * @copyright Copyright (c) 2021
+ * 
  */
 
 #include <stdio.h>
 
-/* Description :
- * function responsible for printing the binary representation for any integer number
+/**
+ * @brief print binary representation of an int number
+ * 
+ * @param num number to print its binary representation
  */
 void print_binary(int num)
 {
     int i,mask=0x80000000;
     printf("The Binary Representation of number %d is : ",num);
     
+    /* loop for all bits */ 
     for(i=0;i<32;i++)
     {
         ((num<<i) & mask) ? printf("1"):printf("0");
@@ -22,8 +29,10 @@ void print_binary(int num)
     printf("\n");
 }
 
-/* Description :
- * function responsible for printing the number of ones and zeros in the binay number
+/**
+ * @brief prints the number of ones and zeros in the binay number
+ * 
+ * @param num number to print num of one's and zero's in its binary representation
  */
 void print_number_of_ones_zeros(int num)
 {
@@ -41,8 +50,9 @@ void print_number_of_ones_zeros(int num)
 int main()
 {
     int input;
-    printf("Please Enter Number : ");
+
     /* enter the required number */
+    printf("Please Enter Number : ");
     scanf("%d",&input);
     printf("\n");
     
