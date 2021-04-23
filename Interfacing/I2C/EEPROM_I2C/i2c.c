@@ -25,7 +25,7 @@ void TWI_Init(void)
     TWAR = 0b00000010; 
 	
     /* enable TWI */
-    TWCR = (1<<TWEN); 
+    TWCR = (1<<TWEN);
 }
 
 void TWI_Start(void)

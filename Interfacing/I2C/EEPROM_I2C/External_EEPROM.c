@@ -50,7 +50,7 @@ uint8 EEPROM_Read_Byte(uint16 u16addr, uint8 *u8data)
         return ERROR;
 		
     /* write the device address and so we need to get A8 A9 A10 address bits and R/W =0 (write) */
-    TWI_Write((uint8)((0xA0) | ((u16addr & 0x0700)>>7)));
+    TWI_Write( (uint8) ( (0xA0) | ( (u16addr&0x0700) >>7 )));
     if (TWI_Get_Status() != TW_MT_SLA_W_ACK)
         return ERROR;
 		

@@ -3,6 +3,8 @@
         "io.h": "c",
         "interrupt.h": "c",
         "lcd.h": "c",
-        "std_types.h": "c"
+        "std_types.h": "c",
+        "i2c.h": "c",
+        "common_macros.h": "c"
     }
 }

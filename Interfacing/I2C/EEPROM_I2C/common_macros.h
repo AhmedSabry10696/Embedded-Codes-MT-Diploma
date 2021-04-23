@@ -8,6 +8,7 @@
  * @copyright Copyright (c) 2021
  * 
  */
+
 #ifndef COMMON_MACROS
 #define COMMON_MACROS
 

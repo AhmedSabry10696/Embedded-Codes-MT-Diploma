@@ -30,7 +30,7 @@
 /* Master transmit ( slave address + Read request ) to slave + Ack received from slave */
 #define TW_MT_SLA_R_ACK  0x40
 
- /* Master transmit data and ACK has been received from Slave */
+/* Master transmit data and ACK has been received from Slave */
 #define TW_MT_DATA_ACK   0x28
 
 /* Master received data and send ACK to slave */
