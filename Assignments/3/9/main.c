@@ -27,7 +27,7 @@ struct TIME
  * 
  * @param t1 first time period
  * @param t2 second time period
- * @param diff result
+ * @param diff result difference
  */
 void differenceBetweenTimePeriod(struct TIME t1, struct TIME t2, struct TIME *diff);
 
