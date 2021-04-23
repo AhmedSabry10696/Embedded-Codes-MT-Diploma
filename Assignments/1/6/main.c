@@ -1,6 +1,17 @@
-/*  Write a program that Count Number of words in entered string.*/
+/**
+ * @file main.c
+ * @author Ahmed Sabry (ahmed.sabry10696@gmail.com)
+ * @brief program Count Number of words in entered string
+ * @version 0.1
+ * @date 2021-04-23
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ */
 
 #include <stdio.h>
+
+/* max array size */
 #define N 100
 
 int main()
@@ -9,8 +20,10 @@ int main()
     int word_count=0,i;
 
     printf("Please enter the required string message : ");
-    gets(name); /* get the string using gets function */
+    /* get the string till enter */
+    gets(name);
     
+    /* loop for array max size */
     for(i=0;i<N;i++)
     {
         if(name[i]==' ')
@@ -18,7 +31,10 @@ int main()
             word_count++;
         }
     }
-    word_count++; /* for last word */
+
+    /* for last word */
+    word_count++;
     printf("number of words = %d\n",word_count);
+    
     return 0;
 }
