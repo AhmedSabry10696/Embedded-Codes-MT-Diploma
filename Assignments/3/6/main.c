@@ -1,12 +1,20 @@
-/*
- * Ex6.c
- * program to store information of student and then display it (struct) 
- * Created on: Jul 19, 2015
- * Author: Ahmed Sabry
+/**
+ * @file main.c
+ * @author Ahmed Sabry (ahmed.sabry10696@gmail.com)
+ * @brief  program stores information of student and then display it (struct) 
+ * @version 0.1
+ * @date 2021-04-23
+ * 
+ * @copyright Copyright (c) 2021
+ * 
  */
 
 #include <stdio.h>
 
+/**
+ * @brief student data
+ * 
+ */
 struct student
 {
     char name[50];

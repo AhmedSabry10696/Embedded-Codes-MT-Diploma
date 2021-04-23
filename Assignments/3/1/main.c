@@ -1,8 +1,12 @@
-/*
- * Ex1.c
- * calculate the frequancy of a certain char in string
- * Created on: Jul 19, 2015
- * Author: Ahmed Sabry
+/**
+ * @file main.c
+ * @author Ahmed Sabry (ahmed.sabry10696@gmail.com)
+ * @brief  calculate the frequancy of a certain char in string
+ * @version 0.1
+ * @date 2021-04-23
+ * 
+ * @copyright Copyright (c) 2021
+ * 
  */
 
 #include <stdio.h>
@@ -12,14 +16,15 @@ int main()
    char str[1000], ch;
    int i, frequency = 0;
 
-   printf("Enter a string: ");
    /* get string from the user */
+   printf("Enter a string: ");
    gets(str);
 
-   printf("Enter a character to find the frequency: ");
    /* get the char to calculate its frequancy */
+   printf("Enter a character to find the frequency: ");
    scanf("%c",&ch);
 
+   /* loop till the end of string */
    for(i = 0; str[i] != '\0'; ++i)
    {
        if(ch == str[i])

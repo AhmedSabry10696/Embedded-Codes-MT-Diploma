@@ -1,18 +1,29 @@
-/*
- * Ex2.c
- * function to reverse string 
- * Created on: Jul 19, 2015
- * Author: Ahmed Sabry
+/**
+ * @file main.c
+ * @author Ahmed Sabry (ahmed.sabry10696@gmail.com)
+ * @brief  function to reverse string
+ * @version 0.1
+ * @date 2021-04-23
+ * 
+ * @copyright Copyright (c) 2021
+ * 
  */
 
 #include<stdio.h>
 #include<string.h>
 
+/**
+ * @brief function to revers string 
+ * 
+ * @param s string to reverse
+ */
 void reverse_string(char * s)
 {
 	int i = 0, j;
 	char temp; 
-	j = strlen(s) - 1; /* index of the last element */
+
+	/* index of the last element */
+	j = strlen(s) - 1; 
 
 	while (i < j)
 	{
@@ -30,9 +41,9 @@ void reverse_string(char * s)
 int main() 
 {
    char str[1000];
-   
-   printf("\nEnter the string :");
+
    /* get string from user */
+   printf("\nEnter the string :");
    gets(str);
 
    /* call the function to reverse string */

@@ -1,8 +1,12 @@
-/*
- * Ex7.c
- * program to add two distances (inch-feet) using structure and display the result 
- * Created on: Jul 19, 2015
- * Author: Ahmed Sabry
+/**
+ * @file main.c
+ * @author Ahmed Sabry (ahmed.sabry10696@gmail.com)
+ * @brief  program adds two distances (inch-feet) using structure and display the result
+ * @version 0.1
+ * @date 2021-04-23
+ * 
+ * @copyright Copyright (c) 2021
+ * 
  */
 
 #include <stdio.h>
@@ -18,12 +22,14 @@ int main()
     printf("Enter information for 1st distance\n");
     printf("Enter feet: ");
     scanf("%d", &d1.feet);
+
     printf("Enter inch: ");
     scanf("%f", &d1.inch);
 
     printf("\nEnter information for 2nd distance\n");
     printf("Enter feet: ");
     scanf("%d", &d2.feet);
+
     printf("Enter inch: ");
     scanf("%f", &d2.inch);
 
@@ -35,7 +41,7 @@ int main()
     if (sumOfDistances.inch > 12.0)
     {
         sumOfDistances.inch = sumOfDistances.inch-12.0;
-        ++sumOfDistances.feet;
+        sumOfDistances.feet++;
     }
 
     /* print the result */
