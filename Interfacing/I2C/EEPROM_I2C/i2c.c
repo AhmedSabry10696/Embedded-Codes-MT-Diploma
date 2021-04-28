@@ -21,7 +21,8 @@ void TWI_Init(void)
     /* Two Wire Bus address my address if any master device want to call me: 0x01 
      * (used in case this MC is a slave device) General Call Recognition: Off */
 
-    /* my address = 0x01 */
+    /* my address = 0b 0000 001 */
+    /* bit 0 general call recogntion bit */ 
     TWAR = 0b00000010; 
 	
     /* enable TWI */
